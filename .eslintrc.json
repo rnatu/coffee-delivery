@@ -7,8 +7,8 @@
       "tabWidth": 2,
       "singleQuote": true,
       "trailingComma": "all",
-      "arrowParen": "always",
-      "sem": true,
+      "arrowParens": "always",
+      "semi": true,
       "endOfLine": "auto"
     }]
   }

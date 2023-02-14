@@ -30,10 +30,12 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  :focus {
-    outline: 0;
-      
-    box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-dark']};
+  h1, h2, h3, h4, h5, h6 p, span {
+    line-height: 130%;
   }
 
+  :focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-dark']};
+  }
 `;

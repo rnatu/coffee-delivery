@@ -15,6 +15,10 @@ export const NavActions = styled.nav`
   gap: 0.75rem;
 
   button {
+    svg {
+      color: ${(props) => props.theme.purple};
+    }
+
     border: none;
     border-radius: 6px;
     display: flex;

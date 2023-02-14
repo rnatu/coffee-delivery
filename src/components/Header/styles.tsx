@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
+export const HeaderNav = styled.header`
   margin: 0 auto;
-  padding: 2rem 0;
-
-  padding: 0 1rem;
-  max-width: calc(51.25rem - 1rem);
+  padding: 2rem 1rem;
+  max-width: calc(70rem - 1rem);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const HeadNav = styled.nav`
+export const NavActions = styled.nav`
   display: flex;
   gap: 0.75rem;
 

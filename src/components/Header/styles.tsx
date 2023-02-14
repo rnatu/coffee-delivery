@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   margin: 0 auto;
-  padding: 32px 0;
+  padding: 2rem 0;
 
+  padding: 0 1rem;
   max-width: calc(51.25rem - 1rem);
 
   display: flex;
@@ -13,7 +14,7 @@ export const HeaderContainer = styled.header`
 
 export const HeadNav = styled.nav`
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
 
   button {
     border: none;
@@ -32,7 +33,7 @@ export const HeadNav = styled.nav`
     border: none;
     border-radius: 6px;
 
-    padding: 8px;
+    padding: 0.5rem;
     background-color: ${(props) => props.theme['yellow-light']};
     color: ${(props) => props.theme['yellow-dark']};
   }

@@ -26,6 +26,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 
+  button {
+    cursor: pointer;
+  }
+
   :focus {
     outline: 0;
       

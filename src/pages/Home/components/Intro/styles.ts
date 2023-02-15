@@ -4,12 +4,11 @@ export const IntroBackground = styled.div`
   background-image: url('/src/assets/background.svg');
   background-repeat: no-repeat;
   background-size: cover;
-
-  padding: 92px 1rem;
 `;
 
 export const IntroContainer = styled.div`
   margin: 0 auto;
+  padding: 92px 1rem;
   max-width: 70rem;
 
   display: flex;
@@ -28,17 +27,17 @@ export const IntroTextContainer = styled.div`
   flex: 1;
 
   h1 {
-    font-family: 'Baloo 2', cursive;
+    font-family: ${(props) => props.theme.fonts.title};
     font-size: 3rem;
     font-weight: 800;
 
-    color: ${(props) => props.theme['base-title']};
+    color: ${(props) => props.theme.colors['base-title']};
   }
 
   h2 {
     font-size: 1.25rem;
     font-weight: 400;
-    color: ${(props) => props.theme['base-subtitle']};
+    color: ${(props) => props.theme.colors['base-subtitle']};
   }
 `;
 
@@ -60,12 +59,12 @@ export const AdvantageItem = styled.p<BackgroundColor>`
 
   span {
     display: flex;
-    color: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.colors.background};
 
     padding: 0.5rem;
     width: fit-content;
 
-    background: ${(props) => props.theme[props.backgroundColor]};
+    background: ${(props) => props.theme.colors[props.backgroundColor]};
     border-radius: 999px;
   }
 `;

@@ -1,9 +1,12 @@
+import { CoffeeCard } from './CoffeeCard';
 import {} from './styles';
 
 export function CoffeeList() {
   return (
     <>
-      <h1>Coffee List</h1>
+      <div>
+        <CoffeeCard />
+      </div>
     </>
   );
 }

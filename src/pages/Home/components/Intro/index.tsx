@@ -8,18 +8,21 @@ import {
 } from './styles';
 
 import introImage from '../../../../assets/intro-imagem.svg';
+import { RegularText, TitleText } from '../../../../components/Typography';
 
 export function Intro() {
   return (
     <IntroBackground>
       <IntroContainer>
         <IntroTextContainer>
-          <h1>Encontre o café perfeito para qualquer hora do dia</h1>
+          <TitleText size="xl">
+            Encontre o café perfeito para qualquer hora do dia
+          </TitleText>
 
-          <h2>
+          <RegularText as="h3" color="subtitle" size="l">
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
-          </h2>
+          </RegularText>
 
           <AdvantageContainer>
             <AdvantageItem backgroundColor="yellow-dark">

@@ -26,18 +26,8 @@ export const IntroContainer = styled.div`
 export const IntroTextContainer = styled.div`
   flex: 1;
 
-  h1 {
-    font-family: ${(props) => props.theme.fonts.title};
-    font-size: 3rem;
-    font-weight: 800;
-
-    color: ${(props) => props.theme.colors['base-title']};
-  }
-
-  h2 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: ${(props) => props.theme.colors['base-subtitle']};
+  h3 {
+    margin-top: 1rem;
   }
 `;
 

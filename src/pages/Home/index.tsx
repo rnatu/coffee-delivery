@@ -1,3 +1,4 @@
+import { TitleText } from '../../components/Typography';
 import { CoffeeFilter } from './components/CoffeeFilter';
 import { CoffeeList } from './components/CoffeeList';
 import { Intro } from './components/Intro';
@@ -10,7 +11,9 @@ export function Home() {
 
       <CoffeeListContainer>
         <CoffeeListHeaderContainer>
-          <h1>Nossos Cafés</h1>
+          <TitleText color="subtitle" size="l">
+            Nossos Cafés
+          </TitleText>
           <CoffeeFilter />
         </CoffeeListHeaderContainer>
 

@@ -1,7 +1,12 @@
 import expresso from '../../../../assets/coffee-images/expresso.svg';
 import { QuantityInput } from '../../../../components/QuantityInput';
 
-import { CardFooter, CoffeeCardContainer, CoffeeName } from './styles';
+import {
+  CardFooter,
+  CoffeeCardContainer,
+  CoffeeDescription,
+  CoffeeName,
+} from './styles';
 
 export function CoffeeCard() {
   return (
@@ -12,7 +17,9 @@ export function CoffeeCard() {
 
       <CoffeeName>Expresso Tradicional</CoffeeName>
 
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <CoffeeDescription>
+        O tradicional café feito com água quente e grãos moídos
+      </CoffeeDescription>
 
       <CardFooter>
         <div>

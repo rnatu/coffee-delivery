@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TitleText } from '../../../../components/Typography';
+import { RegularText, TitleText } from '../../../../components/Typography';
 
 export const CoffeeListContainer = styled.div`
   margin: 3.375rem 0;
@@ -16,12 +16,12 @@ export const CoffeeCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  width: 100%;
   max-width: 16rem;
-
   background-color: ${(props) => props.theme.colors['base-card']};
   border-radius: 6px 36px 6px 36px;
 
-  img {
+  > img {
     height: 7.5rem;
     margin-top: -1.25rem;
   }
@@ -36,20 +36,6 @@ export const CoffeeCardContainer = styled.div`
     font-weight: 700;
     font-size: 0.625rem;
   }
-
-  /* h1 {
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-    color: ${(props) => props.theme.colors['base-subtitle']};
-    font-family: ${(props) => props.theme.fonts.title};
-
-    margin-top: 16px;
-  } */
-
-  > p {
-    text-align: center;
-    color: ${(props) => props.theme.colors['base-label']};
-  }
 `;
 
 export const CoffeeName = styled(TitleText).attrs({
@@ -58,6 +44,14 @@ export const CoffeeName = styled(TitleText).attrs({
   weight: 700,
 })`
   margin-top: 1rem;
+`;
+
+export const CoffeeDescription = styled(RegularText).attrs({
+  color: 'label',
+  size: 's',
+})`
+  margin: 0.5rem 1.25rem;
+  text-align: center;
 `;
 
 export const CardFooter = styled.div``;

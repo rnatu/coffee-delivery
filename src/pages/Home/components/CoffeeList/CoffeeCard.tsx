@@ -1,6 +1,7 @@
 import expresso from '../../../../assets/coffee-images/expresso.svg';
 import { QuantityInput } from '../../../../components/QuantityInput';
-import { CardFooter, CoffeeCardContainer } from './styles';
+
+import { CardFooter, CoffeeCardContainer, CoffeeName } from './styles';
 
 export function CoffeeCard() {
   return (
@@ -9,7 +10,7 @@ export function CoffeeCard() {
 
       <span>{'Tradicional'.toUpperCase()}</span>
 
-      <h1>Expresso Tradicional</h1>
+      <CoffeeName>Expresso Tradicional</CoffeeName>
 
       <p>O tradicional café feito com água quente e grãos moídos</p>
 

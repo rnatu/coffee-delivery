@@ -10,10 +10,4 @@ export const CoffeeListHeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  h1 {
-    font-family: ${(props) => props.theme.fonts.title};
-    font-weight: 800;
-    color: ${(props) => props.theme.colors['base-subtitle']};
-  }
 `;

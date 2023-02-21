@@ -10,5 +10,8 @@ export const FilterButton = styled.button`
   border-radius: 100px;
   border: 1px solid ${(props) => props.theme.colors.yellow};
   background: none;
-  color: ${(props) => props.theme.colors['yellow-dark']};
+
+  font-size: ${({ theme }) => theme.textSizes['components-tag']};
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors['yellow-dark']};
 `;

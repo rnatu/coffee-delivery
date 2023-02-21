@@ -14,6 +14,7 @@ export function Home() {
           <TitleText color="subtitle" size="l">
             Nossos Cafés
           </TitleText>
+
           <CoffeeFilter />
         </CoffeeListHeaderContainer>
 

@@ -1,8 +1,10 @@
+import { ShoppingCartSimple } from 'phosphor-react';
 import expresso from '../../../../assets/coffee-images/expresso.svg';
 import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText, TitleText } from '../../../../components/Typography';
 
 import {
+  AddCartWrapper,
   CardFooter,
   CoffeeCardContainer,
   CoffeeDescription,
@@ -30,7 +32,13 @@ export function CoffeeCard() {
           </TitleText>
         </div>
 
-        <QuantityInput />
+        <AddCartWrapper>
+          <QuantityInput />
+
+          <button>
+            <ShoppingCartSimple weight="fill" size={22} />
+          </button>
+        </AddCartWrapper>
       </CardFooter>
     </CoffeeCardContainer>
   );

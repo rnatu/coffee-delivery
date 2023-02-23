@@ -25,7 +25,7 @@ export function Intro() {
           </RegularText>
 
           <AdvantageContainer>
-            <AdvantageItem backgroundColor="yellow-dark">
+            <AdvantageItem backgroundColor="brand-yellow-dark">
               <span>
                 <ShoppingCart size={16} weight="fill" />
               </span>
@@ -39,14 +39,14 @@ export function Intro() {
               Embalagem mantém o café intacto
             </AdvantageItem>
 
-            <AdvantageItem backgroundColor="yellow">
+            <AdvantageItem backgroundColor="brand-yellow">
               <span>
                 <Timer size={16} weight="fill" />
               </span>
               Entrega rápida e rastreada
             </AdvantageItem>
 
-            <AdvantageItem backgroundColor="purple">
+            <AdvantageItem backgroundColor="brand-purple">
               <span>
                 <Coffee size={16} weight="fill" />
               </span>

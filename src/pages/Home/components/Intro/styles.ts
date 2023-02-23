@@ -39,7 +39,11 @@ export const AdvantageContainer = styled.div`
 `;
 
 interface BackgroundColor {
-  backgroundColor: 'yellow-dark' | 'base-text' | 'yellow' | 'purple';
+  backgroundColor:
+    | 'brand-yellow-dark'
+    | 'base-text'
+    | 'brand-yellow'
+    | 'brand-purple';
 }
 
 export const AdvantageItem = styled.p<BackgroundColor>`

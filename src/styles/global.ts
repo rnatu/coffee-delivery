@@ -28,7 +28,13 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+    transition: .3s;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
+  
 
   h1, h2, h3, h4, h5, h6 p, span {
     line-height: 130%;
@@ -36,6 +42,6 @@ export const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: 0;
-    box-shadow: 0 0 0 2px ${(props) => props.theme.colors['yellow-dark']};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colors['brand-yellow-dark']};
   }
 `;

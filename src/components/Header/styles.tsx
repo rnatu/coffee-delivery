@@ -16,7 +16,7 @@ export const NavActions = styled.nav`
 
   button {
     svg {
-      color: ${(props) => props.theme.colors.purple};
+      color: ${(props) => props.theme.colors['brand-purple']};
     }
 
     border: none;
@@ -25,8 +25,8 @@ export const NavActions = styled.nav`
     align-items: center;
 
     gap: 0.25rem;
-    background-color: ${(props) => props.theme.colors['purple-light']};
-    color: ${(props) => props.theme.colors['purple-dark']};
+    background-color: ${(props) => props.theme.colors['brand-purple-light']};
+    color: ${(props) => props.theme.colors['brand-purple-dark']};
 
     padding: 0 0.7rem;
   }
@@ -36,7 +36,7 @@ export const NavActions = styled.nav`
     border-radius: 6px;
 
     padding: 0.5rem;
-    background-color: ${(props) => props.theme.colors['yellow-light']};
-    color: ${(props) => props.theme.colors['yellow-dark']};
+    background-color: ${(props) => props.theme.colors['brand-yellow-light']};
+    color: ${(props) => props.theme.colors['brand-yellow-dark']};
   }
 `;

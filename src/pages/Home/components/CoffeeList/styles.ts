@@ -30,8 +30,8 @@ export const CoffeeCardContainer = styled.div`
     border-radius: 100px;
     margin-top: 0.75rem;
 
-    background-color: ${(props) => props.theme.colors['yellow-light']};
-    color: ${(props) => props.theme.colors['yellow-dark']};
+    background-color: ${(props) => props.theme.colors['brand-yellow-light']};
+    color: ${(props) => props.theme.colors['brand-yellow-dark']};
     font-weight: 700;
     font-size: 0.625rem;
   }
@@ -56,15 +56,36 @@ export const CoffeeDescription = styled(RegularText).attrs({
 export const CardFooter = styled.div`
   width: 100%;
   padding: 0 1.5rem;
-  margin: 33px 0 1.4688rem;
+  margin: 2.0625rem 0 1.4688rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  > div {
+  > div:first-child {
     display: flex;
     align-items: baseline;
-    gap: 3px;
+    gap: 0.1875rem;
+  }
+`;
+
+export const AddCartWrapper = styled.div`
+  width: 7.5rem;
+  display: flex;
+  gap: 0.5rem;
+
+  > button {
+    display: flex;
+    border: none;
+    padding: 0.5rem;
+
+    background-color: ${({ theme }) => theme.colors['brand-purple-dark']};
+    color: ${({ theme }) => theme.colors['base-card']};
+    padding: 0.5rem;
+    border-radius: 6px;
+
+    &:hover {
+      background: ${({ theme }) => theme.colors['brand-purple']};
+    }
   }
 `;

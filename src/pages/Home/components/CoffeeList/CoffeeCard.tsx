@@ -1,5 +1,6 @@
 import expresso from '../../../../assets/coffee-images/expresso.svg';
 import { QuantityInput } from '../../../../components/QuantityInput';
+import { RegularText, TitleText } from '../../../../components/Typography';
 
 import {
   CardFooter,
@@ -23,12 +24,13 @@ export function CoffeeCard() {
 
       <CardFooter>
         <div>
-          <p>R$ 9,90</p>
+          <RegularText size="s">R$</RegularText>
+          <TitleText color="text" as="strong">
+            9,90
+          </TitleText>
         </div>
 
-        <div>
-          <QuantityInput />
-        </div>
+        <QuantityInput />
       </CardFooter>
     </CoffeeCardContainer>
   );

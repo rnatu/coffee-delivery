@@ -16,7 +16,6 @@ export const CoffeeCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 100%;
   max-width: 16rem;
   background-color: ${(props) => props.theme.colors['base-card']};
   border-radius: 6px 36px 6px 36px;
@@ -54,4 +53,18 @@ export const CoffeeDescription = styled(RegularText).attrs({
   text-align: center;
 `;
 
-export const CardFooter = styled.div``;
+export const CardFooter = styled.div`
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 33px 0 1.4688rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > div {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+`;

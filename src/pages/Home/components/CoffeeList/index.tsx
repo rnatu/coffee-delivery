@@ -6,15 +6,6 @@ export function CoffeeList() {
     <>
       <CoffeeListContainer>
         <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
       </CoffeeListContainer>
     </>
   );

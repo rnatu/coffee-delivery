@@ -1,5 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
 
+export interface Coffee {
+  id: string;
+  tags: string[];
+  name: string;
+  description: string;
+  photo: string;
+  price: number;
+}
+
 export const coffees = [
   {
     id: uuidv4(),

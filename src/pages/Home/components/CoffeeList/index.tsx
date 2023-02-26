@@ -7,7 +7,6 @@ interface CoffeeProps {
 }
 
 export function CoffeeList(coffeeList: CoffeeProps) {
-  console.log(coffeeList);
   return (
     <>
       <CoffeeListContainer>

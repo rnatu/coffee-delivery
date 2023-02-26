@@ -16,7 +16,7 @@ export function Header() {
           Porto Alegre, RS
         </button>
 
-        <NavLink to="history">
+        <NavLink to="checkout">
           <ShoppingCart size={22} weight="fill" />
         </NavLink>
       </NavActions>

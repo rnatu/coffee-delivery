@@ -7,7 +7,6 @@ import { Intro } from './components/Intro';
 import { CoffeeListContainer, CoffeeListHeaderContainer } from './styles';
 
 export function Home() {
-  console.log(typeof coffees[0].id);
   return (
     <>
       <Intro />

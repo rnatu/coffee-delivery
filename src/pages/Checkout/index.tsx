@@ -1,6 +1,6 @@
 import { TitleText } from '../../components/Typography';
-import { BillingOptions } from './BillingOptions';
-import { DeliveryDataForm } from './DeliveryDataForm';
+import { BillingOptions } from './components/BillingOptions';
+import { DeliveryDataForm } from './components/DeliveryDataForm';
 import { CheckoutContainer } from './styles';
 
 export function Checkout() {

@@ -1,4 +1,6 @@
 import { TitleText } from '../../components/Typography';
+import { BillingOptions } from './BillingOptions';
+import { DeliveryDataForm } from './DeliveryDataForm';
 import { CheckoutContainer } from './styles';
 
 export function Checkout() {
@@ -9,7 +11,9 @@ export function Checkout() {
           Complete seu pedido
         </TitleText>
 
-        <div>Pagamento</div>
+        <DeliveryDataForm />
+
+        <BillingOptions />
       </div>
       <div>
         <TitleText size="xs" color="subtitle">

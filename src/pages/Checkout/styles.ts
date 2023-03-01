@@ -9,3 +9,9 @@ export const CheckoutContainer = styled.div`
   display: flex;
   gap: 2rem;
 `;
+
+export const SectionBaseStyle = styled.div`
+  background-color: ${({ theme }) => theme.colors['base-card']};
+  padding: 2.5rem;
+  width: 40rem;
+`;

@@ -2,7 +2,7 @@ import { CurrencyDollar } from 'phosphor-react';
 import { useTheme } from 'styled-components';
 import { SectionTitle } from '../SectionTitle';
 import { PaymentMethodInput } from './PaymentMethodInput';
-import { PaymentMethodsContainer } from './styles';
+import { PaymentMethodOptions, PaymentMethodsContainer } from './styles';
 
 export function PaymentMethods() {
   const { colors } = useTheme();
@@ -15,7 +15,11 @@ export function PaymentMethods() {
         subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
       />
 
-      <PaymentMethodInput />
+      <PaymentMethodOptions>
+        <PaymentMethodInput />
+        <PaymentMethodInput />
+        <PaymentMethodInput />
+      </PaymentMethodOptions>
     </PaymentMethodsContainer>
   );
 }

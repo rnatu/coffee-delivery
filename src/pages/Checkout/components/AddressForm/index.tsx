@@ -17,9 +17,9 @@ export function AddressForm() {
 
       <InputsContainer>
         <Input placeholder="CEP" className="cep" />
-        <Input placeholder="Rua" />
+        <Input placeholder="Rua" className="address" />
         <Input placeholder="Número" type="number" />
-        <Input placeholder="Complemento" />
+        <Input placeholder="Complemento" className="complement" />
         <Input placeholder="Bairro" />
         <Input placeholder="Cidade" />
         <Input placeholder="UF" maxLength={2} />

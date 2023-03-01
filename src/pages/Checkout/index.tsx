@@ -1,5 +1,5 @@
 import { TitleText } from '../../components/Typography';
-import { BillingOptions } from './components/BillingOptions';
+import { PaymentMethods } from './components/PaymentMethods';
 import { AddressForm } from './components/AddressForm';
 import { CheckoutContainer } from './styles';
 
@@ -13,7 +13,7 @@ export function Checkout() {
 
         <AddressForm />
 
-        <BillingOptions />
+        <PaymentMethods />
       </div>
       <div>
         <TitleText size="xs" color="subtitle">

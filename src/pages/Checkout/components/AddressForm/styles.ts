@@ -7,16 +7,21 @@ export const AddressFormContainer = styled(SectionBaseStyle)`
 
 export const InputsContainer = styled.div`
   margin-top: 2rem;
-  border: 1px solid red;
+
+  display: grid;
+  grid-template-columns: 12.5rem 17.25rem 3.75rem;
+  column-gap: 0.75rem;
+  row-gap: 1rem;
+  /* grid-auto-flow: dense; */
+
+  .cep {
+    grid-column: span 3;
+    max-width: 12.5rem;
+  }
 `;
 
 // Input
-export const InputWrapper = styled.div``;
-
-export const InputContainer = styled.div``;
-
 export const InputStyled = styled.input`
-  flex: 1;
   padding: 0.75rem;
   background-color: ${({ theme }) => theme.colors['base-input']};
   border: 1px solid ${({ theme }) => theme.colors['base-button']};

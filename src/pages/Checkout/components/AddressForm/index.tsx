@@ -16,13 +16,13 @@ export function AddressForm() {
       />
 
       <InputsContainer>
-        <Input placeholder={'CEP'} />
-        <Input placeholder={'Rua'} />
-        <Input placeholder={'Número'} type="number" />
-        <Input placeholder={'Complemento'} />
-        <Input placeholder={'Bairro'} />
-        <Input placeholder={'Cidade '} />
-        <Input placeholder={'UF '} maxLength={2} />
+        <Input placeholder="CEP" className="cep" />
+        <Input placeholder="Rua" />
+        <Input placeholder="Número" type="number" />
+        <Input placeholder="Complemento" />
+        <Input placeholder="Bairro" />
+        <Input placeholder="Cidade" />
+        <Input placeholder="UF" maxLength={2} />
       </InputsContainer>
     </AddressFormContainer>
   );

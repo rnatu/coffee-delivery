@@ -1,8 +1,23 @@
-import { CurrencyDollar } from 'phosphor-react';
+import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react';
 import { useTheme } from 'styled-components';
 import { SectionTitle } from '../SectionTitle';
 import { PaymentMethodInput } from './PaymentMethodInput';
 import { PaymentMethodOptions, PaymentMethodsContainer } from './styles';
+
+export const paymentMethodsData = {
+  credit: {
+    label: 'Cartão de crédito',
+    icon: CreditCard,
+  },
+  debit: {
+    label: 'Cartão de débito',
+    icon: Bank,
+  },
+  money: {
+    label: 'Dinheiro',
+    icon: Money,
+  },
+};
 
 export function PaymentMethods() {
   const { colors } = useTheme();
@@ -16,9 +31,9 @@ export function PaymentMethods() {
       />
 
       <PaymentMethodOptions>
-        <PaymentMethodInput />
-        <PaymentMethodInput />
-        <PaymentMethodInput />
+        {Object.entries(paymentMethodsData).map(([type, { label, icon }]) => (
+          <PaymentMethodInput key={label} label={label} icon={icon} />
+        ))}
       </PaymentMethodOptions>
     </PaymentMethodsContainer>
   );

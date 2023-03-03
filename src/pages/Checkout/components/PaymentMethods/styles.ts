@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { SectionBaseStyle } from '../../styles';
 
 export const PaymentMethodsContainer = styled(SectionBaseStyle)`
@@ -21,7 +21,14 @@ export const PaymentInputContainer = styled.div`
   }
 
   input:checked + label {
-    background-color: red;
+    ${({ theme }) => css`
+      background: ${theme.colors['brand-purple-light']};
+      border-color: ${theme.colors['brand-purple']};
+
+      &:hover {
+        background: ${theme.colors['brand-purple-light']};
+      }
+    `}
   }
 
   label {
@@ -39,5 +46,9 @@ export const PaymentInputContainer = styled.div`
     background-color: ${({ theme }) => theme.colors['base-button']};
 
     font-size: ${({ theme }) => theme.textSizes['components-button-s']};
+
+    &:hover {
+      background: ${({ theme }) => theme.colors['base-hover']};
+    }
   }
 `;

@@ -2,7 +2,7 @@ import { TitleText } from '../../components/Typography';
 import { PaymentMethods } from './components/PaymentMethods';
 import { AddressForm } from './components/AddressForm';
 import { CheckoutContainer } from './styles';
-import { CoffeeCartCard } from './components/CoffeeCartCard';
+import { CoffeeCartCard } from './components/CartCard';
 
 export function Checkout() {
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CheckoutContainer = styled.div`
+export const CheckoutContainer = styled.form`
   margin: 0 auto;
   margin-top: 2.5rem;
   padding: 0px 1rem;
@@ -13,5 +13,4 @@ export const CheckoutContainer = styled.div`
 export const SectionBaseStyle = styled.section`
   background-color: ${({ theme }) => theme.colors['base-card']};
   padding: 2.5rem;
-  width: 40rem;
 `;

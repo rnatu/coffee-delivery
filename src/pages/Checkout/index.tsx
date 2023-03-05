@@ -2,10 +2,16 @@ import { TitleText } from '../../components/Typography';
 import { PaymentMethods } from './components/PaymentMethods';
 import { AddressForm } from './components/AddressForm';
 import { CheckoutContainer } from './styles';
+import { CoffeeCartCard } from './components/CoffeeCartCard';
 
 export function Checkout() {
   return (
-    <CheckoutContainer>
+    <CheckoutContainer
+      onSubmit={(event) => {
+        console.log('Submit form');
+        event?.preventDefault();
+      }}
+    >
       <div>
         <TitleText size="xs" color="subtitle">
           Complete seu pedido
@@ -19,6 +25,8 @@ export function Checkout() {
         <TitleText size="xs" color="subtitle">
           Cafés selecionados
         </TitleText>
+
+        <CoffeeCartCard />
       </div>
     </CheckoutContainer>
   );

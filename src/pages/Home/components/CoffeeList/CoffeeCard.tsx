@@ -1,5 +1,5 @@
 import { ShoppingCartSimple } from 'phosphor-react';
-import expresso from '../../../../assets/coffee-images/expresso.svg';
+
 import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText, TitleText } from '../../../../components/Typography';
 
@@ -14,7 +14,10 @@ import {
 export function CoffeeCard() {
   return (
     <CoffeeCardContainer>
-      <img src={expresso} alt="Xícara de café expresso tradicional" />
+      <img
+        src={`/coffees/americano.svg`}
+        alt="Xícara de café expresso tradicional"
+      />
 
       <span>{'Tradicional'.toUpperCase()}</span>
 

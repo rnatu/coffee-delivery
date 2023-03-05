@@ -5,14 +5,14 @@ export interface QuantityInputContainerProps {
 }
 
 export const QuantityInputContainer = styled.div<QuantityInputContainerProps>`
+  width: 4.5rem;
   background-color: ${({ theme }) => theme.colors['base-button']};
   border-radius: 6px;
-  /* padding: 0 8px; */
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4px;
+  gap: 0.25rem;
 
   input {
     width: 100%;
@@ -31,13 +31,13 @@ export const QuantityInputContainer = styled.div<QuantityInputContainerProps>`
   ${({ size }) =>
     size === 'medium' &&
     css`
-      padding: 0.5rem;
+      padding: 0.5313rem 0.5rem;
     `}
 
   ${({ size }) =>
     size === 'small' &&
     css`
-      padding: 0.3rem 0.5rem;
+      padding: 0.3438rem 0.5rem;
     `}
 `;
 

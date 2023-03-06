@@ -3,6 +3,8 @@ import { SectionBaseStyle } from '../../styles';
 
 export const AddressFormContainer = styled(SectionBaseStyle)`
   margin-top: 0.9375rem;
+
+  border-radius: 6px;
 `;
 
 export const InputsContainer = styled.div`

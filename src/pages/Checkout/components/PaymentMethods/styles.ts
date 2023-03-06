@@ -3,6 +3,8 @@ import { SectionBaseStyle } from '../../styles';
 
 export const PaymentMethodsContainer = styled(SectionBaseStyle)`
   margin-top: 0.75rem;
+
+  border-radius: 6px;
 `;
 
 export const PaymentMethodOptions = styled.div`

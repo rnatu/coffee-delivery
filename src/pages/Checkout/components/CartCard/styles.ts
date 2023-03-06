@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { SectionBaseStyle } from '../../styles';
 
 export const CartCardContainer = styled(SectionBaseStyle)`
-  width: 448px;
-  border: 1px solid red;
+  width: 100%;
+  margin-top: 0.9375rem;
 `;
 
 // CartCard
@@ -29,9 +29,15 @@ export const CartActionsContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   height: 2rem;
+
+  > div {
+    max-width: 4.5rem;
+  }
 `;
 
-export const RemoveCartButton = styled.button`
+export const RemoveCartButton = styled.button.attrs({
+  type: 'button',
+})`
   font-size: ${({ theme }) => theme.textSizes['components-button-s']};
 
   display: flex;
@@ -42,4 +48,16 @@ export const RemoveCartButton = styled.button`
   border: none;
   border-radius: 6px;
   padding: 0.4063rem 0.5rem;
+
+  svg {
+    color: ${({ theme }) => theme.colors['brand-purple']};
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors['base-hover']};
+
+    svg {
+      color: ${({ theme }) => theme.colors['brand-purple-dark']};
+    }
+  }
 `;

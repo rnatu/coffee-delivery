@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const CheckoutContainer = styled.form`
   margin: 0 auto;
   margin-top: 2.5rem;
-  padding: 0px 1rem;
-  max-width: calc(70rem + 1rem);
+  max-width: 70rem;
 
   display: flex;
   gap: 2rem;
@@ -13,4 +12,12 @@ export const CheckoutContainer = styled.form`
 export const SectionBaseStyle = styled.section`
   background-color: ${({ theme }) => theme.colors['base-card']};
   padding: 2.5rem;
+`;
+
+export const UserDataContainer = styled.div`
+  flex: 1;
+`;
+
+export const SelectedCoffees = styled.div`
+  width: 100%;
 `;

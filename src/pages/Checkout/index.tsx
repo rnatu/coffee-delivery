@@ -1,8 +1,12 @@
 import { TitleText } from '../../components/Typography';
 import { PaymentMethods } from './components/PaymentMethods';
 import { AddressForm } from './components/AddressForm';
-import { CheckoutContainer } from './styles';
-import { CoffeeCartCard } from './components/CartCard';
+import {
+  SelectedCoffees,
+  CheckoutContainer,
+  UserDataContainer,
+} from './styles';
+import { CartCard } from './components/CartCard';
 
 export function Checkout() {
   return (
@@ -12,7 +16,7 @@ export function Checkout() {
         event?.preventDefault();
       }}
     >
-      <div>
+      <UserDataContainer>
         <TitleText size="xs" color="subtitle">
           Complete seu pedido
         </TitleText>
@@ -20,14 +24,15 @@ export function Checkout() {
         <AddressForm />
 
         <PaymentMethods />
-      </div>
-      <div>
+      </UserDataContainer>
+
+      <SelectedCoffees>
         <TitleText size="xs" color="subtitle">
           Cafés selecionados
         </TitleText>
 
-        <CoffeeCartCard />
-      </div>
+        <CartCard />
+      </SelectedCoffees>
     </CheckoutContainer>
   );
 }

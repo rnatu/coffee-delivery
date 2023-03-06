@@ -1,5 +1,4 @@
 import { Trash } from 'phosphor-react';
-import { useTheme } from 'styled-components';
 import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText } from '../../../../components/Typography';
 import {
@@ -9,8 +8,6 @@ import {
 } from './styles';
 
 export function CartItem() {
-  const { colors } = useTheme();
-
   return (
     <CartItemContainer>
       <div>
@@ -25,13 +22,14 @@ export function CartItem() {
           <CartActionsContainer>
             <QuantityInput size="small" />
             <RemoveCartButton>
-              <Trash color={colors['brand-purple']} /> Remover
+              <Trash size={16} />
+              REMOVER
             </RemoveCartButton>
           </CartActionsContainer>
         </div>
       </div>
 
-      <RegularText weight="bold">R$ 9,90</RegularText>
+      <RegularText weight={700}>R$ 9,90</RegularText>
     </CartItemContainer>
   );
 }

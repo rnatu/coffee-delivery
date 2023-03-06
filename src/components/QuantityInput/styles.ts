@@ -5,7 +5,7 @@ export interface QuantityInputContainerProps {
 }
 
 export const QuantityInputContainer = styled.div<QuantityInputContainerProps>`
-  width: 4.5rem;
+  width: 100%;
   background-color: ${({ theme }) => theme.colors['base-button']};
   border-radius: 6px;
 

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const HeaderNav = styled.header`
   margin: 0 auto;
-  padding: 2rem 1rem;
-  max-width: calc(70rem + 1rem);
+  max-width: 70rem;
+  padding: 2rem 0;
 
   display: flex;
   align-items: center;

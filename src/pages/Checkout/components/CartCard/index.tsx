@@ -5,9 +5,10 @@ export function CartCard() {
   return (
     <CartCardContainer>
       <CartItem />
+      <div className="divider" />
       <CartItem />
-      <CartItem />
-      <CartItem />
+      <div className="divider" />
+
       <button type="submit">Submit</button>
     </CartCardContainer>
   );

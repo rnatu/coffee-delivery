@@ -6,6 +6,12 @@ export const CartCardContainer = styled(SectionBaseStyle)`
   margin-top: 0.9375rem;
 
   border-radius: 6px 44px 6px 44px;
+
+  .divider {
+    width: 100%;
+    margin: 24px 0;
+    border-bottom: 1px solid ${({ theme }) => theme.colors['base-button']};
+  }
 `;
 
 // CartCard

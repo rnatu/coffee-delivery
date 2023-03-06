@@ -4,6 +4,8 @@ import { SectionBaseStyle } from '../../styles';
 export const CartCardContainer = styled(SectionBaseStyle)`
   width: 100%;
   margin-top: 0.9375rem;
+
+  border-radius: 6px 44px 6px 44px;
 `;
 
 // CartCard

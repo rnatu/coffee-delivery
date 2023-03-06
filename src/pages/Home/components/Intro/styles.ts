@@ -8,7 +8,7 @@ export const IntroBackground = styled.div`
 
 export const IntroContainer = styled.div`
   margin: 0 auto;
-  padding: 92px 1rem;
+  padding: 5.75rem 1rem;
   max-width: calc(70rem + 1rem);
 
   display: flex;

@@ -69,3 +69,16 @@ export const RemoveCartButton = styled.button.attrs({
     }
   }
 `;
+
+// CartCard
+export const CartResumeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;

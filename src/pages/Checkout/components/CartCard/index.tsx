@@ -1,3 +1,4 @@
+import { Button } from '../../../../components/Button';
 import { CartItem } from './CartItem';
 import { CartResume } from './CartResume';
 import { CartCardContainer } from './styles';
@@ -12,7 +13,7 @@ export function CartCard() {
 
       <CartResume />
 
-      <button type="submit">Submit</button>
+      <Button text="Confirmar Pedido" />
     </CartCardContainer>
   );
 }

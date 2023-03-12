@@ -14,7 +14,7 @@ export function CartResume() {
       </div>
       <div>
         <RegularText size="l" weight="700" color="subtitle">
-          Total de itens
+          Total
         </RegularText>
         <RegularText size="l" weight="700" color="subtitle">
           R$ 29,70

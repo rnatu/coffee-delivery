@@ -50,6 +50,8 @@ export const IconWrapper = styled.button.attrs({
   background: none;
   border: none;
 
+  display: flex;
+
   color: ${({ theme }) => theme.colors['brand-purple']};
 
   &:disabled {

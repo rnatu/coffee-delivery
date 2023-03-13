@@ -13,7 +13,7 @@ export const CartCardContainer = styled(SectionBaseStyle)`
     border-bottom: 1px solid ${({ theme }) => theme.colors['base-button']};
   }
 
-  button {
+  > button {
     margin-top: 24px;
   }
 `;

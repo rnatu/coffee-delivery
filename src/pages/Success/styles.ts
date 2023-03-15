@@ -16,9 +16,14 @@ export const SuccessContainer = styled.div`
 
 export const OrderInfo = styled.section`
   flex: 1;
-  border-width: 4px;
-  border-style: solid;
-  border-image: ${({ theme }) => css`
-  linear-gradient(to bottom right, ${theme.colors['brand-yellow-dark']}, ${theme.colors['brand-purple']}) 1;
+
+  //border radius with gradient
+  border: 1px double transparent;
+  border-radius: 6px 36px;
+  background-image: ${({ theme }) => css`
+  linear-gradient(white, white),
+  linear-gradient(to right, ${theme.colors['brand-yellow-dark']}, ${theme.colors['brand-purple']})
   `};
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 `;

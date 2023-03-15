@@ -1,7 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 import {
   AdvantageContainer,
-  AdvantageItem,
   IntroBackground,
   IntroContainer,
   IntroTextContainer,
@@ -9,8 +8,12 @@ import {
 
 import introImage from '../../../../assets/intro-imagem.svg';
 import { RegularText, TitleText } from '../../../../components/Typography';
+import { InfoWithIcon } from '../../../../components/InfoWithIcon';
+import { useTheme } from 'styled-components';
 
 export function Intro() {
+  const { colors } = useTheme();
+
   return (
     <IntroBackground>
       <IntroContainer>
@@ -25,39 +28,31 @@ export function Intro() {
           </RegularText>
 
           <AdvantageContainer>
-            <AdvantageItem backgroundColor="brand-yellow-dark">
-              <span>
-                <ShoppingCart size={16} weight="fill" />
-              </span>
-              Compra simples e segura
-            </AdvantageItem>
+            <InfoWithIcon
+              backgroundColor={colors['brand-yellow-dark']}
+              icon={ShoppingCart}
+            >
+              <RegularText>Compra simples e segura</RegularText>
+            </InfoWithIcon>
 
-            <AdvantageItem backgroundColor="base-text">
-              <span>
-                <Package size={16} weight="fill" />
-              </span>
-              Embalagem mantém o café intacto
-            </AdvantageItem>
+            <InfoWithIcon backgroundColor={colors['base-text']} icon={Package}>
+              <RegularText>Embalagem mantém o café intacto</RegularText>
+            </InfoWithIcon>
 
-            <AdvantageItem backgroundColor="brand-yellow">
-              <span>
-                <Timer size={16} weight="fill" />
-              </span>
-              Entrega rápida e rastreada
-            </AdvantageItem>
+            <InfoWithIcon backgroundColor={colors['brand-yellow']} icon={Timer}>
+              <RegularText>Entrega rápida e rastreada</RegularText>
+            </InfoWithIcon>
 
-            <AdvantageItem backgroundColor="brand-purple">
-              <span>
-                <Coffee size={16} weight="fill" />
-              </span>
-              O café chega fresquinho até você
-            </AdvantageItem>
+            <InfoWithIcon
+              backgroundColor={colors['brand-purple']}
+              icon={Coffee}
+            >
+              <RegularText>O café chega fresquinho até você </RegularText>
+            </InfoWithIcon>
           </AdvantageContainer>
         </IntroTextContainer>
 
-        <div className="introImage">
-          <img src={introImage} alt="" />
-        </div>
+        <img src={introImage} alt="" />
       </IntroContainer>
     </IntroBackground>
   );

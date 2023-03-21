@@ -56,6 +56,8 @@ export const InputStyled = styled.input`
   background-color: ${({ theme }) => theme.colors['base-input']};
   border: none;
 
+  color: ${({ theme }) => theme.colors['base-text']};
+
   &::placeholder {
     color: ${({ theme }) => theme.colors['base-label']};
     font-size: ${({ theme }) => theme.textSizes['text-regular-s']};

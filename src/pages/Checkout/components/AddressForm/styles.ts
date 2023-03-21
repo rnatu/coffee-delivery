@@ -29,13 +29,40 @@ export const InputsContainer = styled.div`
   }
 `;
 
-export const InputStyled = styled.input`
+// input
+export const InputStyledContainer = styled.div`
+  display: flex;
+  align-items: center;
+
   padding: 0.75rem;
   background-color: ${({ theme }) => theme.colors['base-input']};
   border: 1px solid ${({ theme }) => theme.colors['base-button']};
 
+  &:focus-within {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colors['brand-yellow-dark']};
+  }
+
+  > p {
+    font-style: italic;
+    color: ${({ theme }) => theme.colors['base-label']};
+    margin-left: 0.625rem;
+  }
+`;
+
+export const InputStyled = styled.input`
+  width: 100%;
+
+  background-color: ${({ theme }) => theme.colors['base-input']};
+  border: none;
+
   &::placeholder {
     color: ${({ theme }) => theme.colors['base-label']};
     font-size: ${({ theme }) => theme.textSizes['text-regular-s']};
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
   }
 `;

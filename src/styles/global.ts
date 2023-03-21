@@ -6,11 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+
   }
 
   body {
@@ -21,9 +18,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button{
-    font-family: 'Roboto', sans-serif;
+    font-family: ${({ theme }) => theme.fonts.regular};
     font-weight: 400;
-    font-size: 1rem;
+    font-size: ${({ theme }) => theme.textSizes['text-regular-m']}
   }
 
   button {
@@ -35,7 +32,6 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   
-
   h1, h2, h3, h4, h5, h6 p, span {
     line-height: 130%;
   }
@@ -44,4 +40,25 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
     box-shadow: 0 0 0 2px ${(props) => props.theme.colors['brand-yellow-dark']};
   }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors['base-button']}
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background: ${({ theme }) => theme.colors['brand-purple']}
+  }
+
+
 `;

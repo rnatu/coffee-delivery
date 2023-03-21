@@ -1,15 +1,19 @@
 import { InputHTMLAttributes } from 'react';
-import { InputStyled } from './styles';
+import { RegularText } from '../../../../components/Typography';
+import { InputStyled, InputStyledContainer } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  error?: string;
+  //! error?: string;
   rightText?: string;
 }
 
-export function Input({ ...props }: InputProps) {
+export function Input({ className, rightText, ...props }: InputProps) {
   return (
     <>
-      <InputStyled {...props} />
+      <InputStyledContainer className={className}>
+        <InputStyled {...props} />
+        <RegularText size="s">{rightText}</RegularText>
+      </InputStyledContainer>
     </>
   );
 }

@@ -11,7 +11,7 @@ export function QuantityInput({ size = 'medium' }: QuantityInputProps) {
       <IconWrapper disabled={true}>
         <Minus size={14} weight="bold" />
       </IconWrapper>
-      <input type="string" readOnly value={1} />
+      <input type="number" readOnly value={1} />
       <IconWrapper>
         <Plus size={14} weight="bold" />
       </IconWrapper>

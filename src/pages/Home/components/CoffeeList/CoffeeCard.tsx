@@ -2,6 +2,7 @@ import { ShoppingCartSimple } from 'phosphor-react';
 
 import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText, TitleText } from '../../../../components/Typography';
+import { Coffee } from '../../../../data/coffees';
 
 import {
   AddCartWrapper,
@@ -11,11 +12,13 @@ import {
   CoffeeName,
 } from './styles';
 
-export function CoffeeCard() {
+interface CoffeeCardProps extends Coffee {}
+
+export function CoffeeCard({ photo }: CoffeeCardProps) {
   return (
     <CoffeeCardContainer>
       <img
-        src={`/coffees/americano.svg`}
+        src={`/coffees/${photo}`}
         alt="Xícara de café expresso tradicional"
       />
 

@@ -6,11 +6,13 @@ interface CoffeeProps {
   coffeeList: Coffee[];
 }
 
-export function CoffeeList(coffeeList: CoffeeProps) {
+export function CoffeeList({ coffeeList }: CoffeeProps) {
   return (
     <>
       <CoffeeListContainer>
-        <CoffeeCard />
+        {coffeeList.map((coffee) => (
+          <CoffeeCard key={coffee.id} {...coffee} />
+        ))}
       </CoffeeListContainer>
     </>
   );

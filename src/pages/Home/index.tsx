@@ -7,6 +7,8 @@ import { Intro } from './components/Intro';
 import { CoffeeListContainer, CoffeeListHeaderContainer } from './styles';
 
 export function Home() {
+  const coffeeList = coffees;
+
   return (
     <>
       <Intro />
@@ -20,7 +22,7 @@ export function Home() {
           <CoffeeFilter />
         </CoffeeListHeaderContainer>
 
-        <CoffeeList coffeeList={coffees} />
+        <CoffeeList coffeeList={coffeeList} />
       </CoffeeListContainer>
     </>
   );

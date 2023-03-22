@@ -24,7 +24,9 @@ export const CoffeeCardContainer = styled.div`
     height: 7.5rem;
     margin-top: -1.25rem;
   }
+`;
 
+export const CoffeeTagsContainer = styled.div`
   > span {
     padding: 0.25rem 0.5rem;
     border-radius: 100px;

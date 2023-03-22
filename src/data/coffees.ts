@@ -31,7 +31,7 @@ export const coffees = [
     tags: ['tradicional'],
     name: 'Expresso Cremoso',
     description: 'Café expresso tradicional com espuma cremosa',
-    photo: 'cremoso.svg',
+    photo: 'expresso-cremoso.svg',
     price: 9.9,
   },
   {
@@ -39,7 +39,7 @@ export const coffees = [
     tags: ['tradicional', 'gelado'],
     name: 'Expresso Gelado',
     description: 'Bebida preparada com café expresso e cubos de gelo',
-    photo: 'gelado.svg',
+    photo: 'cafe-gelado.svg',
     price: 9.9,
   },
   {
@@ -47,7 +47,7 @@ export const coffees = [
     tags: ['tradicional', 'com leite'],
     name: 'Café com Leite',
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
-    photo: 'leite.svg',
+    photo: 'cafe-com-leite.svg',
     price: 9.9,
   },
   {
@@ -80,9 +80,9 @@ export const coffees = [
   {
     id: uuidv4(),
     tags: ['tradicional', 'com leite'],
-    name: 'Mocaccino',
+    name: 'Mochaccino',
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
-    photo: 'mocaccino.svg',
+    photo: 'mochaccino.svg',
     price: 9.9,
   },
   {
@@ -90,7 +90,7 @@ export const coffees = [
     tags: ['especial', 'com leite'],
     name: 'Chocolate Quente',
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
-    photo: 'chocolate.svg',
+    photo: 'chocolate-quente.svg',
     price: 9.9,
   },
   {

@@ -18,7 +18,7 @@ export const CartCardContainer = styled(SectionBaseStyle)`
   }
 `;
 
-// CartCard
+// CartItem
 export const CartItemContainer = styled.div`
   padding: 0.5rem 0.25rem;
   width: 100%;
@@ -74,7 +74,7 @@ export const RemoveCartButton = styled.button.attrs({
   }
 `;
 
-// CartCard
+// CartResume
 export const CartResumeContainer = styled.div`
   display: flex;
   flex-direction: column;

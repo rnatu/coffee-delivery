@@ -1,6 +1,10 @@
 import { createContext, ReactNode } from 'react';
 
-export const CartContext = createContext({});
+type CartContextType = {
+  test: string;
+};
+
+export const CartContext = createContext({} as CartContextType);
 
 interface CartContextProviderProps {
   children: ReactNode;

@@ -2,7 +2,7 @@ import { ShoppingCartSimple } from 'phosphor-react';
 
 import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText, TitleText } from '../../../../components/Typography';
-import { Coffee } from '../../../../data/coffees';
+import { CoffeeType } from '../../../../data/coffees';
 import { useCartContext } from '../../../../hooks/useCartContext';
 import { formatMoney } from '../../../../utils/formatMoney';
 
@@ -15,7 +15,7 @@ import {
   CoffeeTagsContainer,
 } from './styles';
 
-interface CoffeeCardProps extends Coffee {}
+interface CoffeeCardProps extends CoffeeType {}
 
 export function CoffeeCard({
   photo,

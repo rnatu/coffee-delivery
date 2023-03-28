@@ -14,11 +14,12 @@ interface CartContextProviderProps {
 type CartState = {
   coffees: CoffeeType[];
 };
+
 export function CartContextProvider({ children }: CartContextProviderProps) {
   function cartReducer(state: CartState, action: any) {
-    switch (action) {
+    switch (action.type) {
       case 'ADD_COFFEE_ON_CART':
-        console.log('action ADD_COFFEE_ON_CART');
+        console.log(action.payload);
         return state;
 
       default:
@@ -26,12 +27,19 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     }
   }
 
-  const [CartState, dispatch] = useReducer(cartReducer, {
+  const [cartState, dispatch] = useReducer(cartReducer, {
     coffees: [],
   });
 
+  console.log(cartState);
+
   function addCoffeeOnCart(coffeeId: string) {
-    dispatch('ADD_COFFEE_ON_CART');
+    dispatch({
+      type: 'ADD_COFFEE_ON_CART',
+      payload: {
+        coffeeId,
+      },
+    });
   }
 
   console.log('CartContext Carregado');

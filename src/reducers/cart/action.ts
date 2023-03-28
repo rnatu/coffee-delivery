@@ -1,13 +1,15 @@
+import { CoffeeType } from '../../data/coffees';
+
 export enum ActionTypes {
   // eslint-disable-next-line no-unused-vars
   ADD_COFFEE_ON_CART = 'ADD_COFFEE_ON_CART',
 }
 
-export function addCoffeeOnCartAction(coffeeId: string) {
+export function addCoffeeOnCartAction(coffee: CoffeeType) {
   return {
     type: ActionTypes.ADD_COFFEE_ON_CART,
     payload: {
-      coffeeId,
+      coffee,
     },
   };
 }

@@ -1,10 +1,11 @@
 import { createContext, ReactNode, useReducer } from 'react';
+import { CoffeeType } from '../data/coffees';
 
 import { addCoffeeOnCartAction } from '../reducers/cart/action';
 import { cartReducer } from '../reducers/cart/reducer';
 
 type CartContextType = {
-  addCoffeeOnCart: (coffeeId: string) => void;
+  addCoffeeOnCart: (coffee: CoffeeType) => void;
 };
 
 export const CartContext = createContext({} as CartContextType);
@@ -18,13 +19,9 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     coffees: [],
   });
 
-  console.log(cartState);
-
-  function addCoffeeOnCart(coffeeId: string) {
-    dispatch(addCoffeeOnCartAction(coffeeId));
+  function addCoffeeOnCart(coffee: CoffeeType) {
+    dispatch(addCoffeeOnCartAction(coffee));
   }
-
-  console.log('CartContext Carregado');
 
   return (
     <CartContext.Provider

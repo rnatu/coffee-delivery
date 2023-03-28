@@ -1,9 +1,9 @@
-import { Coffee } from '../../../../data/coffees';
+import { CoffeeType } from '../../../../data/coffees';
 import { CoffeeCard } from './CoffeeCard';
 import { CoffeeListContainer } from './styles';
 
 interface CoffeeProps {
-  coffeeList: Coffee[];
+  coffeeList: CoffeeType[];
 }
 
 export function CoffeeList({ coffeeList }: CoffeeProps) {

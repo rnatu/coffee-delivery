@@ -71,12 +71,8 @@ export function CoffeeCard(coffee: CoffeeCardProps) {
             onIncrease={handleIncrease}
           />
 
-          <button>
-            <ShoppingCartSimple
-              weight="fill"
-              size={22}
-              onClick={handleAddCoffee}
-            />
+          <button onClick={handleAddCoffee}>
+            <ShoppingCartSimple weight="fill" size={22} />
           </button>
         </AddCartWrapper>
       </CardFooter>

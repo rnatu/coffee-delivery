@@ -19,6 +19,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     coffees: [],
   });
 
+  console.log(cartState);
+
   function addCoffeeOnCart(coffee: CoffeeType) {
     dispatch(addCoffeeOnCartAction(coffee));
   }

@@ -7,21 +7,39 @@ type CartState = {
 
 type ActionType = {
   type: ActionTypes;
-  payload: any;
+  payload: {
+    coffee: CoffeeType;
+  };
 };
 
 export function cartReducer(state: CartState, action: ActionType) {
   switch (action.type) {
-    case 'ADD_COFFEE_ON_CART':
-      console.log(state.coffees);
-      state.coffees.map((coffee) => {
-        console.log('o');
-        // if (coffee.id === action.payload.coffeeId) {
-        //   console.log(coffee.name);
-        // }
-        return coffee;
-      });
-      return state;
+    case 'ADD_COFFEE_ON_CART': {
+      const coffeeAlreadyExists = state.coffees.find(
+        (coffee) => coffee.id === action.payload.coffee.id,
+      );
+
+      if (coffeeAlreadyExists) {
+        return {
+          ...state,
+          coffees: state.coffees.map((coffee) =>
+            coffee.id === action.payload.coffee.id
+              ? {
+                  ...coffee,
+                  amount: coffee.amount + action.payload.coffee.amount,
+                }
+              : {
+                  ...coffee,
+                },
+          ),
+        };
+      }
+
+      return {
+        ...state,
+        coffees: [...state.coffees, action.payload.coffee],
+      };
+    }
 
     default:
       return state;

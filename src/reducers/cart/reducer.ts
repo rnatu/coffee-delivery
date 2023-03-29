@@ -15,7 +15,7 @@ type ActionType = {
 export function cartReducer(state: CartState, action: ActionType) {
   switch (action.type) {
     case 'ADD_COFFEE_ON_CART': {
-      const coffeeAlreadyExists = state.coffees.find(
+      const coffeeAlreadyExists = state.coffees.some(
         (coffee) => coffee.id === action.payload.coffee.id,
       );
 

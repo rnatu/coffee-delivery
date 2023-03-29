@@ -1,7 +1,7 @@
 import { CoffeeType } from '../../data/coffees';
 import { ActionTypes } from './action';
 
-type CartState = {
+export type CartState = {
   coffees: CoffeeType[];
 };
 
@@ -12,32 +12,30 @@ type ActionType = {
   };
 };
 
-export function cartReducer(state: CartState, action: ActionType) {
-  switch (action.type) {
+export function cartReducer(state: CartState, { type, payload }: ActionType) {
+  switch (type) {
     case 'ADD_COFFEE_ON_CART': {
       const coffeeAlreadyExists = state.coffees.some(
-        (coffee) => coffee.id === action.payload.coffee.id,
+        (coffee) => coffee.id === payload.coffee.id,
       );
 
       if (coffeeAlreadyExists) {
         return {
           ...state,
           coffees: state.coffees.map((coffee) =>
-            coffee.id === action.payload.coffee.id
+            coffee.id === payload.coffee.id
               ? {
                   ...coffee,
-                  amount: coffee.amount + action.payload.coffee.amount,
+                  amount: coffee.amount + payload.coffee.amount,
                 }
-              : {
-                  ...coffee,
-                },
+              : coffee,
           ),
         };
       }
 
       return {
         ...state,
-        coffees: [...state.coffees, action.payload.coffee],
+        coffees: [...state.coffees, payload.coffee],
       };
     }
 

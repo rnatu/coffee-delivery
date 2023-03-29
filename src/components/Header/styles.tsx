@@ -38,5 +38,26 @@ export const NavActions = styled.nav`
     padding: 0.5rem;
     background-color: ${(props) => props.theme.colors['brand-yellow-light']};
     color: ${(props) => props.theme.colors['brand-yellow-dark']};
+
+    position: relative;
+
+    div {
+      position: absolute;
+      top: -8px;
+      right: -8.35px;
+
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 1000px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
+      color: ${({ theme }) => theme.colors.white};
+
+      font-size: 12px;
+    }
   }
 `;

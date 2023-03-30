@@ -5,7 +5,7 @@ import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText, TitleText } from '../../../../components/Typography';
 import { CoffeeType } from '../../../../data/coffees';
 import { useCartContext } from '../../../../hooks/useCartContext';
-import { formatMoney } from '../../../../utils/formatMoney';
+import formatMoney from '../../../../utils/formatMoney';
 
 import {
   AddCartWrapper,

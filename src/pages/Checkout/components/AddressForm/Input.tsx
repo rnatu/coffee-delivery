@@ -12,7 +12,7 @@ export function Input({ className, rightText, ...props }: InputProps) {
     <>
       <InputStyledContainer className={className}>
         <InputStyled {...props} />
-        <RegularText size="s">{rightText}</RegularText>
+        {rightText && <RegularText size="s">{rightText}</RegularText>}
       </InputStyledContainer>
     </>
   );

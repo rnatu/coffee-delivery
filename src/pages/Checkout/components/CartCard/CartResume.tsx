@@ -23,7 +23,7 @@ export function CartResume() {
           Total
         </RegularText>
         <RegularText size="l" weight="700" color="subtitle">
-          R$ 29,70
+          R$ {formatMoney(cartState.total + deliveryCost)}
         </RegularText>
       </div>
     </CartResumeContainer>

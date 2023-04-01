@@ -5,6 +5,8 @@ import { CartResumeContainer } from './styles';
 
 export function CartResume() {
   const { cartState } = useCartContext();
+  const deliveryCost = cartState.total * 0.15;
+  console.log(deliveryCost);
 
   return (
     <CartResumeContainer>
@@ -14,7 +16,7 @@ export function CartResume() {
       </div>
       <div>
         <RegularText size="s">Entrega</RegularText>
-        <RegularText>R$ 3,50</RegularText>
+        <RegularText>R$ {formatMoney(deliveryCost)}</RegularText>
       </div>
       <div>
         <RegularText size="l" weight="700" color="subtitle">

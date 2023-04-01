@@ -20,8 +20,7 @@ export function cartReducer(state: CartState, { type, payload }: ActionType) {
         (coffee) => coffee.id === payload.coffee.id,
       );
 
-      const newTotal =
-        state.total + payload.coffee.amount * payload.coffee.price;
+      const total = state.total + payload.coffee.amount * payload.coffee.price;
 
       if (coffeeAlreadyExists) {
         return {
@@ -34,14 +33,14 @@ export function cartReducer(state: CartState, { type, payload }: ActionType) {
                 }
               : coffee,
           ),
-          newTotal,
+          total,
         };
       }
 
       return {
         ...state,
         coffees: [...state.coffees, payload.coffee],
-        newTotal,
+        total,
       };
     }
 

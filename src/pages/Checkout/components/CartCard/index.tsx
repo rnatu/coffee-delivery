@@ -10,10 +10,10 @@ export function CartCard() {
   return (
     <CartCardContainer>
       {cartState.coffees.map((coffee) => (
-        <>
-          <CartItem key={coffee.id} coffee={coffee} />
+        <div key={coffee.id}>
+          <CartItem coffee={coffee} />
           <div className="divider" />
-        </>
+        </div>
       ))}
 
       <CartResume />

@@ -1,12 +1,16 @@
 import { RegularText } from '../../../../components/Typography';
+import { useCartContext } from '../../../../hooks/useCartContext';
+import formatMoney from '../../../../utils/formatMoney';
 import { CartResumeContainer } from './styles';
 
 export function CartResume() {
+  const { cartState } = useCartContext();
+
   return (
     <CartResumeContainer>
       <div>
         <RegularText size="s">Total de itens</RegularText>
-        <RegularText>R$ 29,70</RegularText>
+        <RegularText>R$ {formatMoney(cartState.total)}</RegularText>
       </div>
       <div>
         <RegularText size="s">Entrega</RegularText>

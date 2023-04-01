@@ -18,9 +18,10 @@ interface CartContextProviderProps {
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartState, dispatch] = useReducer(cartReducer, {
     coffees: [],
+    total: 0,
   });
 
-  console.log(cartState.coffees);
+  console.log(cartState);
 
   function addCoffeeOnCart(coffee: CoffeeType) {
     dispatch(addCoffeeOnCartAction(coffee));

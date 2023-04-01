@@ -3,6 +3,7 @@ import { ActionTypes } from './action';
 
 export type CartState = {
   coffees: CoffeeType[];
+  total: number;
 };
 
 type ActionType = {
@@ -19,6 +20,9 @@ export function cartReducer(state: CartState, { type, payload }: ActionType) {
         (coffee) => coffee.id === payload.coffee.id,
       );
 
+      const newTotal =
+        state.total + payload.coffee.amount * payload.coffee.price;
+
       if (coffeeAlreadyExists) {
         return {
           ...state,
@@ -30,12 +34,14 @@ export function cartReducer(state: CartState, { type, payload }: ActionType) {
                 }
               : coffee,
           ),
+          newTotal,
         };
       }
 
       return {
         ...state,
         coffees: [...state.coffees, payload.coffee],
+        newTotal,
       };
     }
 

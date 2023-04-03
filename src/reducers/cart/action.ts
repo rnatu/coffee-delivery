@@ -5,7 +5,7 @@ export enum ActionTypes {
   ADD_COFFEE_ON_CART = 'ADD_COFFEE_ON_CART',
 }
 
-export function addCoffeeOnCartAction(coffee: CoffeeType) {
+export function addOnCartAction(coffee: CoffeeType) {
   return {
     type: ActionTypes.ADD_COFFEE_ON_CART,
     payload: {

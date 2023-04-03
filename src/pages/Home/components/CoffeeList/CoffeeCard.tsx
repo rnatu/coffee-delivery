@@ -21,7 +21,7 @@ interface CoffeeCardProps extends CoffeeType {}
 export function CoffeeCard(coffee: CoffeeCardProps) {
   const formattedPrice = formatMoney(coffee.price);
 
-  const { addCoffeeOnCart } = useCartContext();
+  const { addOnCart } = useCartContext();
 
   const [amount, setAmount] = useState(1);
 
@@ -35,7 +35,7 @@ export function CoffeeCard(coffee: CoffeeCardProps) {
   }
 
   function handleAddCoffee() {
-    addCoffeeOnCart({ ...coffee, amount });
+    addOnCart({ ...coffee, amount });
     setAmount(1);
   }
 

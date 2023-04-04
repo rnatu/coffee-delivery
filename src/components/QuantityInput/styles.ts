@@ -41,9 +41,7 @@ export const QuantityInputContainer = styled.div<QuantityInputContainerProps>`
     `}
 `;
 
-export const IconWrapper = styled.button.attrs({
-  type: 'button',
-})`
+export const IconWrapper = styled.button`
   width: 0.875rem;
   height: 0.875rem;
 

@@ -23,17 +23,28 @@ export const cartReducer = produce(
       case 'ADD_COFFEE_ON_CART': {
         draft.total += payload.coffee.amount * payload.coffee.price;
 
-        const coffeeAlreadyExists = draft.coffees.find(
+        const coffeeAlreadyExists = draft.coffees.findIndex(
           (coffee) => coffee.id === payload.coffee.id,
         );
 
-        if (coffeeAlreadyExists) {
-          coffeeAlreadyExists.amount += payload.coffee.amount;
+        if (coffeeAlreadyExists !== -1) {
+          draft.coffees[coffeeAlreadyExists].amount += payload.coffee.amount;
           // console.log(JSON.stringify(draft, null, 2));
           break;
+        } else {
+          draft.coffees.push(payload.coffee);
+          break;
         }
+      }
 
-        draft.coffees.push(payload.coffee);
+      case 'REMOVE_COFFEE_FROM_CART': {
+        draft.coffees = draft.coffees.filter(
+          (coffee) => coffee.id !== payload.coffee.id,
+        );
+
+        draft.total = draft.coffees.reduce((prev, curr) => {
+          return prev + curr.amount * curr.price;
+        }, 0);
         break;
       }
 

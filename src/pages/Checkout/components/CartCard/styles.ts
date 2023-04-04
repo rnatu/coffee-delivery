@@ -47,9 +47,7 @@ export const CartActionsContainer = styled.div`
   }
 `;
 
-export const RemoveCartButton = styled.button.attrs({
-  type: 'button',
-})`
+export const RemoveCartButton = styled.button`
   font-size: ${({ theme }) => theme.textSizes['components-button-s']};
 
   display: flex;

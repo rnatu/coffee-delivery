@@ -8,12 +8,19 @@ import {
   RemoveCartButton,
 } from './styles';
 import formatMoney from '../../../../utils/formatMoney';
+import { useCartContext } from '../../../../hooks/useCartContext';
 
 interface CartItemProps {
   coffee: CoffeeType;
 }
 
 export function CartItem({ coffee }: CartItemProps) {
+  const { removeFromCart } = useCartContext();
+
+  function handleRemoveCoffee() {
+    removeFromCart(coffee);
+  }
+
   return (
     <CartItemContainer>
       <div>
@@ -27,7 +34,7 @@ export function CartItem({ coffee }: CartItemProps) {
 
           <CartActionsContainer>
             <QuantityInput size="small" />
-            <RemoveCartButton>
+            <RemoveCartButton type="button" onClick={handleRemoveCoffee}>
               <Trash size={16} />
               REMOVER
             </RemoveCartButton>

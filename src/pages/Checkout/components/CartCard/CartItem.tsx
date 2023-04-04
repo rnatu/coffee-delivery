@@ -35,7 +35,7 @@ export function CartItem({ coffee }: CartItemProps) {
           <RegularText color="subtitle">{coffee.name}</RegularText>
 
           <CartActionsContainer>
-            <QuantityInput size="small" />
+            <QuantityInput size="small" amount={coffee.amount} />
             <RemoveCartButton type="button" onClick={handleRemoveCoffee}>
               <Trash size={16} />
               REMOVER

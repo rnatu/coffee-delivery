@@ -17,6 +17,8 @@ interface CartItemProps {
 export function CartItem({ coffee }: CartItemProps) {
   const { removeFromCart } = useCartContext();
 
+  const formattedPrice = formatMoney(coffee.price * coffee.amount);
+
   function handleRemoveCoffee() {
     removeFromCart(coffee);
   }
@@ -42,7 +44,7 @@ export function CartItem({ coffee }: CartItemProps) {
         </div>
       </div>
 
-      <RegularText weight={700}>R$ {formatMoney(coffee.price)}</RegularText>
+      <RegularText weight={700}>R$ {formattedPrice}</RegularText>
     </CartItemContainer>
   );
 }

@@ -19,11 +19,10 @@ import {
 interface CoffeeCardProps extends CoffeeType {}
 
 export function CoffeeCard(coffee: CoffeeCardProps) {
-  const formattedPrice = formatMoney(coffee.price);
-
   const { addOnCart } = useCartContext();
-
   const [amount, setAmount] = useState(1);
+
+  const formattedPrice = formatMoney(coffee.price);
 
   function handleIncrease() {
     setAmount((oldState) => oldState + 1);

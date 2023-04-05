@@ -15,9 +15,24 @@ interface CartItemProps {
 }
 
 export function CartItem({ coffee }: CartItemProps) {
-  const { removeFromCart } = useCartContext();
+  const { removeFromCart, addOnCart } = useCartContext();
 
   const formattedPrice = formatMoney(coffee.price * coffee.amount);
+  console.log(coffee.amount);
+
+  function handleIncrease() {
+    addOnCart({
+      ...coffee,
+      amount: +1,
+    });
+  }
+
+  function handleDecrease() {
+    addOnCart({
+      ...coffee,
+      amount: -1,
+    });
+  }
 
   function handleRemoveCoffee() {
     removeFromCart(coffee);
@@ -35,7 +50,12 @@ export function CartItem({ coffee }: CartItemProps) {
           <RegularText color="subtitle">{coffee.name}</RegularText>
 
           <CartActionsContainer>
-            <QuantityInput size="small" amount={coffee.amount} />
+            <QuantityInput
+              size="small"
+              amount={coffee.amount}
+              onIncrease={handleIncrease}
+              onDecrease={handleDecrease}
+            />
             <RemoveCartButton type="button" onClick={handleRemoveCoffee}>
               <Trash size={16} />
               REMOVER

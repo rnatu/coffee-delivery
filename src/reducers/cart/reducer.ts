@@ -1,7 +1,7 @@
 import produce from 'immer';
 
 import { CoffeeType } from '../../data/coffees';
-import { ActionTypes, PayloadType } from './action';
+import { ActionTypes, ActionPayloads } from './action';
 
 export type CartState = {
   coffees: CoffeeType[];
@@ -10,7 +10,7 @@ export type CartState = {
 
 export type ActionType = {
   type: ActionTypes;
-  payload: PayloadType;
+  payload: ActionPayloads;
 };
 
 // % com immer
@@ -23,20 +23,26 @@ export const cartReducer = produce(
       );
     }
 
+    function calculateTotalOnCart() {
+      draft.total = draft.coffees.reduce((prev, curr) => {
+        return prev + curr.amount * curr.price;
+      }, 0);
+    }
+
     switch (type) {
       case 'ADD_COFFEE_ON_CART': {
-        draft.total += payload.coffee.amount * payload.coffee.price;
-
         const coffeeAlreadyOnCart = getCoffeeIndexOnCart();
 
         if (coffeeAlreadyOnCart !== -1) {
           draft.coffees[coffeeAlreadyOnCart].amount += payload.coffee.amount;
           // console.log(JSON.stringify(draft, null, 2));
-          break;
-        } else {
-          draft.coffees.push(payload.coffee);
+          calculateTotalOnCart();
           break;
         }
+
+        draft.coffees.push(payload.coffee);
+        calculateTotalOnCart();
+        break;
       }
 
       case 'REMOVE_COFFEE_FROM_CART': {
@@ -44,29 +50,25 @@ export const cartReducer = produce(
           (coffee) => coffee.id !== payload.coffee.id,
         );
 
-        draft.total = draft.coffees.reduce((prev, curr) => {
-          return prev + curr.amount * curr.price;
-        }, 0);
+        calculateTotalOnCart();
         break;
       }
 
       case 'CHANGE_CART_ITEM_QUANTITY': {
         const coffeeIndex = getCoffeeIndexOnCart();
 
-        console.log('aqui');
-        if (payload.changeQuantity === 'increase') {
-          draft.coffees[coffeeIndex].amount++;
-          break;
-        }
-
         if (
           payload.changeQuantity === 'decrease' &&
           payload.coffee.amount > 1
         ) {
           draft.coffees[coffeeIndex].amount--;
+
+          calculateTotalOnCart();
           break;
         }
+        draft.coffees[coffeeIndex].amount++;
 
+        calculateTotalOnCart();
         break;
       }
 

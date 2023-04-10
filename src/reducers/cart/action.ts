@@ -7,12 +7,12 @@ export enum ActionTypes {
   CHANGE_CART_ITEM_QUANTITY = 'CHANGE_CART_ITEM_QUANTITY',
 }
 
-export type PayloadType = {
+export type ActionPayloads = {
   coffee: CoffeeType;
   changeQuantity?: 'increase' | 'decrease';
 };
 
-export function addOnCartAction({ coffee }: PayloadType) {
+export function addOnCartAction({ coffee }: ActionPayloads) {
   return {
     type: ActionTypes.ADD_COFFEE_ON_CART,
     payload: {
@@ -21,7 +21,7 @@ export function addOnCartAction({ coffee }: PayloadType) {
   };
 }
 
-export function removeFromCartAction({ coffee }: PayloadType) {
+export function removeFromCartAction({ coffee }: ActionPayloads) {
   return {
     type: ActionTypes.REMOVE_COFFEE_FROM_CART,
     payload: {
@@ -33,7 +33,7 @@ export function removeFromCartAction({ coffee }: PayloadType) {
 export function changeCartItemQuantityAction({
   coffee,
   changeQuantity,
-}: PayloadType) {
+}: ActionPayloads) {
   return {
     type: ActionTypes.CHANGE_CART_ITEM_QUANTITY,
     payload: {

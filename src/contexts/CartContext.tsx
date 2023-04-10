@@ -1,13 +1,21 @@
 import { createContext, ReactNode, useReducer } from 'react';
 import { CoffeeType } from '../data/coffees';
 
-import { addOnCartAction, removeFromCartAction } from '../reducers/cart/action';
+import {
+  addOnCartAction,
+  changeCartItemQuantityAction,
+  removeFromCartAction,
+} from '../reducers/cart/action';
 import { cartReducer, CartState } from '../reducers/cart/reducer';
 
 type CartContextType = {
   cartState: CartState;
   addOnCart: (coffee: CoffeeType) => void;
   removeFromCart: (coffee: CoffeeType) => void;
+  changeCartItemQuantity: (
+    coffee: CoffeeType,
+    changeQuantity: 'increase' | 'decrease',
+  ) => void;
 };
 
 export const CartContext = createContext({} as CartContextType);
@@ -25,11 +33,18 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   console.log(cartState);
 
   function addOnCart(coffee: CoffeeType) {
-    dispatch(addOnCartAction(coffee));
+    dispatch(addOnCartAction({ coffee }));
   }
 
   function removeFromCart(coffee: CoffeeType) {
-    dispatch(removeFromCartAction(coffee));
+    dispatch(removeFromCartAction({ coffee }));
+  }
+
+  function changeCartItemQuantity(
+    coffee: CoffeeType,
+    changeQuantity: 'increase' | 'decrease',
+  ) {
+    dispatch(changeCartItemQuantityAction({ coffee, changeQuantity }));
   }
 
   return (
@@ -38,6 +53,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         cartState,
         addOnCart,
         removeFromCart,
+        changeCartItemQuantity,
       }}
     >
       {children}

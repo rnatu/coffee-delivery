@@ -15,23 +15,16 @@ interface CartItemProps {
 }
 
 export function CartItem({ coffee }: CartItemProps) {
-  const { removeFromCart, addOnCart } = useCartContext();
+  const { removeFromCart, changeCartItemQuantity } = useCartContext();
 
   const formattedPrice = formatMoney(coffee.price * coffee.amount);
-  console.log(coffee.amount);
 
   function handleIncrease() {
-    addOnCart({
-      ...coffee,
-      amount: +1,
-    });
+    changeCartItemQuantity(coffee, 'increase');
   }
 
   function handleDecrease() {
-    addOnCart({
-      ...coffee,
-      amount: -1,
-    });
+    changeCartItemQuantity(coffee, 'decrease');
   }
 
   function handleRemoveCoffee() {

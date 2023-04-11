@@ -21,9 +21,11 @@ export function Header() {
 
         <NavLink to="checkout">
           <ShoppingCart size={22} weight="fill" />
-          <div>
-            <span>{cartState.coffees.length}</span>
-          </div>
+          {cartState.coffees.length > 0 && (
+            <div>
+              <span>{cartState.coffees.length}</span>
+            </div>
+          )}
         </NavLink>
       </NavActions>
     </HeaderNav>

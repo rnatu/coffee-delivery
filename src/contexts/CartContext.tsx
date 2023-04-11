@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useReducer } from 'react';
+import { createContext, ReactNode, useReducer } from 'react';
 import { CoffeeType } from '../data/coffees';
 
 import {
@@ -26,10 +26,19 @@ interface CartContextProviderProps {
 
 const COFFEE_ITEMS_STORAGE_KEY = '@coffee-delivery: cart-state-1.0.0';
 
+const initialState = {
+  coffees: [],
+  total: 0,
+};
+
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cartState, dispatch] = useReducer(cartReducer, {
-    coffees: [],
-    total: 0,
+  const [cartState, dispatch] = useReducer(cartReducer, initialState, () => {
+    const storedStateAsJSON = localStorage.getItem(COFFEE_ITEMS_STORAGE_KEY);
+
+    if (storedStateAsJSON) {
+      return JSON.parse(storedStateAsJSON);
+    }
+    return initialState;
   });
 
   function addOnCart(coffee: CoffeeType) {
@@ -48,6 +57,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }
 
   localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartState));
+
+  // useEffect(() => {
+  //   localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartState));
+  // }, [cartState]);
 
   return (
     <CartContext.Provider

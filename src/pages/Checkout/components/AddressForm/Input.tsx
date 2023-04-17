@@ -1,19 +1,23 @@
-import { InputHTMLAttributes } from 'react';
+/* eslint-disable react/display-name */
+import { InputHTMLAttributes, forwardRef } from 'react';
 import { RegularText } from '../../../../components/Typography';
 import { InputStyled, InputStyledContainer } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  //! error?: string;
+  error?: string;
   rightText?: string;
 }
 
-export function Input({ className, rightText, ...props }: InputProps) {
-  return (
-    <>
-      <InputStyledContainer className={className}>
-        <InputStyled {...props} />
-        {rightText && <RegularText size="s">{rightText}</RegularText>}
-      </InputStyledContainer>
-    </>
-  );
-}
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ className, rightText, error, ...props }, ref) => {
+    return (
+      <div className={className}>
+        <InputStyledContainer>
+          <InputStyled {...props} ref={ref} />
+          {rightText && <RegularText size="s">{rightText}</RegularText>}
+        </InputStyledContainer>
+        {error && <RegularText size="s">{error}</RegularText>}
+      </div>
+    );
+  },
+);

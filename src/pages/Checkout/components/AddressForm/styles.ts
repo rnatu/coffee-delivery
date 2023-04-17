@@ -20,7 +20,7 @@ export const InputsContainer = styled.div`
     max-width: 12.5rem;
   }
 
-  .address {
+  .street {
     grid-column: span 3;
   }
 

@@ -18,7 +18,7 @@ export function CartCard() {
 
       <CartResume />
 
-      <Button text="Confirmar Pedido" />
+      <Button text="Confirmar Pedido" type="submit" />
     </CartCardContainer>
   );
 }

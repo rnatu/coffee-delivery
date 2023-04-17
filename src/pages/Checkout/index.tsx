@@ -7,32 +7,59 @@ import {
   UserDataContainer,
 } from './styles';
 import { CartCard } from './components/CartCard';
+import { FormProvider, useForm } from 'react-hook-form';
+import * as zod from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const checkoutFormValidationSchema = zod.object({
+  cep: zod
+    .string({
+      invalid_type_error: 'Insira um número válido',
+    })
+    .min(1, 'Informe o CEP'),
+  street: zod.string().min(1, 'Informe o nome da rua'),
+  number: zod
+    .number({
+      invalid_type_error: 'Insira um número válido',
+    })
+    .min(1, 'Informe o número'),
+});
+
+type checkoutFormData = zod.infer<typeof checkoutFormValidationSchema>;
 
 export function Checkout() {
+  const checkoutForm = useForm<checkoutFormData>({
+    resolver: zodResolver(checkoutFormValidationSchema),
+    defaultValues: {},
+  });
+
+  const { handleSubmit } = checkoutForm;
+
+  function handleCheckout(data: checkoutFormData) {
+    console.log(data);
+  }
+
   return (
-    <CheckoutContainer
-      onSubmit={(event) => {
-        console.log('Submit form');
-        event?.preventDefault();
-      }}
-    >
-      <UserDataContainer>
-        <TitleText size="xs" color="subtitle">
-          Complete seu pedido
-        </TitleText>
+    <FormProvider {...checkoutForm}>
+      <CheckoutContainer onSubmit={handleSubmit(handleCheckout)}>
+        <UserDataContainer>
+          <TitleText size="xs" color="subtitle">
+            Complete seu pedido
+          </TitleText>
 
-        <AddressForm />
+          <AddressForm />
 
-        <PaymentMethods />
-      </UserDataContainer>
+          <PaymentMethods />
+        </UserDataContainer>
 
-      <SelectedCoffees>
-        <TitleText size="xs" color="subtitle">
-          Cafés selecionados
-        </TitleText>
+        <SelectedCoffees>
+          <TitleText size="xs" color="subtitle">
+            Cafés selecionados
+          </TitleText>
 
-        <CartCard />
-      </SelectedCoffees>
-    </CheckoutContainer>
+          <CartCard />
+        </SelectedCoffees>
+      </CheckoutContainer>
+    </FormProvider>
   );
 }

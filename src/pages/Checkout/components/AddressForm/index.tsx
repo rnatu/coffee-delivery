@@ -3,9 +3,21 @@ import { useTheme } from 'styled-components';
 import { SectionTitle } from '../SectionTitle';
 import { Input } from './Input';
 import { AddressFormContainer, InputsContainer } from './styles';
+import { useFormContext } from 'react-hook-form';
+
+interface ErrorsType {
+  errors: {
+    [key: string]: {
+      message: string;
+    };
+  };
+}
 
 export function AddressForm() {
   const { colors } = useTheme();
+  const { register, formState } = useFormContext();
+
+  const { errors } = formState as unknown as ErrorsType;
 
   return (
     <AddressFormContainer>
@@ -16,9 +28,27 @@ export function AddressForm() {
       />
 
       <InputsContainer>
-        <Input placeholder="CEP" className="cep" required type="number" />
-        <Input placeholder="Rua" className="address" />
-        <Input placeholder="Número" type="number" />
+        <Input
+          placeholder="CEP"
+          className="cep"
+          type="text"
+          {...register('cep')}
+          error={errors.cep?.message}
+        />
+        <Input
+          placeholder="Rua"
+          className="street"
+          {...register('street')}
+          error={errors.street?.message}
+        />
+        <Input
+          placeholder="Número"
+          type="number"
+          {...register('number', {
+            valueAsNumber: true,
+          })}
+          error={errors.number?.message}
+        />
         <Input
           placeholder="Complemento"
           className="complement"

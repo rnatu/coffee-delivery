@@ -17,7 +17,7 @@ export function AddressForm() {
   const { colors } = useTheme();
   const { register, formState } = useFormContext();
 
-  const { errors } = formState as unknown as ErrorsType;
+  const { errors } = formState as ErrorsType;
 
   return (
     <AddressFormContainer>
@@ -56,9 +56,22 @@ export function AddressForm() {
           {...register('complement')}
           error={errors.complement?.message}
         />
-        <Input placeholder="Bairro" />
-        <Input placeholder="Cidade" />
-        <Input placeholder="UF" maxLength={2} />
+        <Input
+          placeholder="Bairro"
+          {...register('district')}
+          error={errors.district?.message}
+        />
+        <Input
+          placeholder="Cidade"
+          {...register('city')}
+          error={errors.city?.message}
+        />
+        <Input
+          placeholder="UF"
+          maxLength={2}
+          {...register('uf')}
+          error={errors.uf?.message}
+        />
       </InputsContainer>
     </AddressFormContainer>
   );

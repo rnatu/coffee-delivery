@@ -3,6 +3,8 @@ import { useTheme } from 'styled-components';
 import { SectionTitle } from '../SectionTitle';
 import { PaymentMethodInput } from './PaymentMethodInput';
 import { PaymentMethodOptions, PaymentMethodsContainer } from './styles';
+import { useFormContext } from 'react-hook-form';
+import { RegularText } from '../../../../components/Typography';
 
 export const paymentMethodsData = {
   credit: {
@@ -21,6 +23,12 @@ export const paymentMethodsData = {
 
 export function PaymentMethods() {
   const { colors } = useTheme();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
+  const paymentMethodError = errors?.paymentMethod?.message as string;
 
   return (
     <PaymentMethodsContainer>
@@ -32,9 +40,15 @@ export function PaymentMethods() {
 
       <PaymentMethodOptions>
         {Object.entries(paymentMethodsData).map(([type, { label, icon }]) => (
-          <PaymentMethodInput key={label} label={label} icon={icon} />
+          <PaymentMethodInput
+            key={label}
+            label={label}
+            icon={icon}
+            {...register('paymentMethod')}
+          />
         ))}
       </PaymentMethodOptions>
+      {paymentMethodError && <RegularText>{paymentMethodError}</RegularText>}
     </PaymentMethodsContainer>
   );
 }

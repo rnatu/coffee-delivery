@@ -14,7 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 const checkoutFormValidationSchema = zod.object({
   cep: zod
     .string({
-      invalid_type_error: 'Insira um número válido',
+      invalid_type_error: 'Insira um CEP válido',
     })
     .min(1, 'Informe o CEP'),
   street: zod.string().min(1, 'Informe o nome da rua'),
@@ -23,6 +23,7 @@ const checkoutFormValidationSchema = zod.object({
       invalid_type_error: 'Insira um número válido',
     })
     .min(1, 'Informe o número'),
+  complement: zod.string(),
 });
 
 type checkoutFormData = zod.infer<typeof checkoutFormValidationSchema>;

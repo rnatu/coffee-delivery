@@ -1,10 +1,12 @@
 import { IconProps } from 'phosphor-react';
-import React, { forwardRef } from 'react';
+import React, { InputHTMLAttributes, forwardRef } from 'react';
 import { useTheme } from 'styled-components';
 import { PaymentInputContainer } from './styles';
 
-interface PaymentMethodInputProps {
+interface PaymentMethodInputProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  paymentType: string;
   icon: React.ForwardRefExoticComponent<
     IconProps & React.RefAttributes<SVGSVGElement>
   >;
@@ -14,7 +16,7 @@ interface PaymentMethodInputProps {
 export const PaymentMethodInput = forwardRef<
   HTMLInputElement,
   PaymentMethodInputProps
->(({ label, icon, ...props }, ref) => {
+>(({ label, paymentType, icon, ...props }, ref) => {
   const { colors } = useTheme();
 
   return (
@@ -23,9 +25,9 @@ export const PaymentMethodInput = forwardRef<
         type="radio"
         name="paymentMethod"
         id={label}
-        value={label}
-        {...props}
+        value={paymentType}
         ref={ref}
+        {...props}
       />
       <label htmlFor={label}>
         {React.createElement(icon, { size: 16, color: colors['brand-purple'] })}

@@ -30,6 +30,8 @@ export function PaymentMethods() {
 
   const paymentMethodError = errors?.paymentMethod?.message as string;
 
+  console.log(Object.entries(paymentMethodsData));
+
   return (
     <PaymentMethodsContainer>
       <SectionTitle
@@ -39,14 +41,17 @@ export function PaymentMethods() {
       />
 
       <PaymentMethodOptions>
-        {Object.entries(paymentMethodsData).map(([type, { label, icon }]) => (
-          <PaymentMethodInput
-            key={label}
-            label={label}
-            icon={icon}
-            {...register('paymentMethod')}
-          />
-        ))}
+        {Object.entries(paymentMethodsData).map(
+          ([paymentType, { label, icon }]) => (
+            <PaymentMethodInput
+              key={label}
+              label={label}
+              paymentType={paymentType}
+              icon={icon}
+              {...register('paymentMethod')}
+            />
+          ),
+        )}
       </PaymentMethodOptions>
       {paymentMethodError && <RegularText>{paymentMethodError}</RegularText>}
     </PaymentMethodsContainer>

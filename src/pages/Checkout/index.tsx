@@ -16,24 +16,18 @@ import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from 'react-router-dom';
 
-enum PaymentMethodsEnum {
-  credit = 'Cartão de crédito',
-  debit = 'Cartão de débito',
-  money = 'Dinheiro',
-}
-
 const checkoutFormValidationSchema = zod.object({
-  // cep: zod.string().min(1, 'Informe o CEP'),
-  // street: zod.string().min(1, 'Informe o nome da rua'),
-  // number: zod
-  //   .number({
-  //     invalid_type_error: 'Insira um número válido',
-  //   })
-  //   .min(1, 'Informe o número'),
-  // complement: zod.string(),
-  // district: zod.string().min(1, 'Informe o Bairro'),
-  // city: zod.string().min(1, 'Informe a Cidade'),
-  // uf: zod.string().min(1, 'Informe o UF'),
+  cep: zod.string().min(1, 'Informe o CEP'),
+  street: zod.string().min(1, 'Informe o nome da rua'),
+  number: zod
+    .number({
+      invalid_type_error: 'Insira um número válido',
+    })
+    .min(1, 'Informe o número'),
+  complement: zod.string(),
+  district: zod.string().min(1, 'Informe o Bairro'),
+  city: zod.string().min(1, 'Informe a Cidade'),
+  uf: zod.string().min(1, 'Informe o UF'),
   paymentMethod: zod.string({
     errorMap: () => {
       return {
@@ -58,9 +52,10 @@ export function Checkout() {
   const { handleSubmit } = checkoutForm;
 
   function handleCheckout(data: checkoutFormData) {
-    if (data) {
-      navigate('/success');
-    }
+    console.log(data);
+    // if (data) {
+    //   navigate('/success');
+    // }
   }
 
   return (

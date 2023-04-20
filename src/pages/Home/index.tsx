@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { TitleText } from '../../components/Typography';
 import { coffees } from '../../data/coffees';
 
@@ -7,6 +8,13 @@ import { Intro } from './components/Intro';
 import { CoffeeListContainer, CoffeeListHeaderContainer } from './styles';
 
 export function Home() {
+  const [activeTag, setActiveTag] = useState('');
+
+  function handleChange(tag: string) {
+    setActiveTag(tag);
+  }
+  console.log(activeTag);
+
   const coffeeList = coffees;
 
   return (
@@ -19,7 +27,7 @@ export function Home() {
             Nossos Cafés
           </TitleText>
 
-          <CoffeeFilter />
+          <CoffeeFilter activeTag={activeTag} onHandleChange={handleChange} />
         </CoffeeListHeaderContainer>
 
         <CoffeeList coffeeList={coffeeList} />

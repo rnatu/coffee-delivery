@@ -25,4 +25,9 @@ export const FilterItem = styled.label`
     font-weight: 700;
     color: ${({ theme }) => theme.colors['brand-yellow-dark']};
   }
+
+  //Disable Text Selection
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 `;

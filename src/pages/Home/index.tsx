@@ -11,6 +11,10 @@ export function Home() {
   const [activeTag, setActiveTag] = useState('');
 
   function handleChange(tag: string) {
+    if (tag === activeTag) {
+      setActiveTag('');
+      return;
+    }
     setActiveTag(tag);
   }
   console.log(activeTag);

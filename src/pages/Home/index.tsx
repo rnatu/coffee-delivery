@@ -11,15 +11,14 @@ export function Home() {
   const [activeTag, setActiveTag] = useState('');
 
   function handleChange(tag: string) {
-    if (tag === activeTag) {
-      setActiveTag('');
-      return;
-    }
-    setActiveTag(tag);
+    setActiveTag((prevTag) => (prevTag === tag ? '' : tag));
   }
-  console.log(activeTag);
 
-  const coffeeList = coffees;
+  function filterCoffeeByTag(tag: string) {
+    return coffees.filter((coffee) => coffee.tags.includes(tag));
+  }
+
+  const coffeeList = activeTag ? filterCoffeeByTag(activeTag) : coffees;
 
   return (
     <>

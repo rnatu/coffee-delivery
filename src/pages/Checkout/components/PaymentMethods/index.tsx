@@ -30,8 +30,6 @@ export function PaymentMethods() {
 
   const paymentMethodError = errors?.paymentMethod?.message as string;
 
-  console.log(Object.entries(paymentMethodsData));
-
   return (
     <PaymentMethodsContainer>
       <SectionTitle

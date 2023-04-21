@@ -7,7 +7,6 @@ export type CoffeeType = {
   description: string;
   photo: string;
   price: number;
-  amount?: number;
 };
 
 export const coffees = [

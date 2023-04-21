@@ -1,7 +1,6 @@
 import { Trash } from 'phosphor-react';
 import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText } from '../../../../components/Typography';
-import { CoffeeType } from '../../../../data/coffees';
 import {
   CartActionsContainer,
   CartItemContainer,
@@ -9,9 +8,10 @@ import {
 } from './styles';
 import formatMoney from '../../../../utils/formatMoney';
 import { useCartContext } from '../../../../hooks/useCartContext';
+import { CoffeeCartType } from '../../../../reducers/cart/reducer';
 
 interface CartItemProps {
-  coffee: CoffeeType;
+  coffee: CoffeeCartType;
 }
 
 export function CartItem({ coffee }: CartItemProps) {

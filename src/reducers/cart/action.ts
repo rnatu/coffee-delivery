@@ -1,4 +1,4 @@
-import { CoffeeType } from '../../data/coffees';
+import { CoffeeCartType } from './reducer';
 
 export enum ActionTypes {
   /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@ export enum ActionTypes {
 }
 
 export type ActionPayloads = {
-  coffee: CoffeeType;
+  coffee: CoffeeCartType;
   changeQuantity?: 'increase' | 'decrease';
 };
 

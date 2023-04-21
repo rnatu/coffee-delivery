@@ -3,8 +3,12 @@ import produce from 'immer';
 import { CoffeeType } from '../../data/coffees';
 import { ActionTypes, ActionPayloads } from './action';
 
+export type CoffeeCartType = CoffeeType & {
+  amount: number;
+};
+
 export type CartState = {
-  coffees: CoffeeType[];
+  coffees: CoffeeCartType[];
   total: number;
 };
 

@@ -7,15 +7,7 @@ interface CoffeeFilterProps {
 }
 
 export function CoffeeFilter({ activeTag, onHandleChange }: CoffeeFilterProps) {
-  const tags = coffees.reduce((prev: string[], curr) => {
-    curr.tags.filter((tag) => {
-      if (!prev.includes(tag)) {
-        prev.push(tag);
-      }
-      return null;
-    });
-    return prev;
-  }, []);
+  const tags = [...new Set(coffees.flatMap((coffee) => coffee.tags))];
 
   return (
     <>

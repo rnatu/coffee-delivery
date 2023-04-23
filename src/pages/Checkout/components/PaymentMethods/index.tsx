@@ -51,7 +51,18 @@ export function PaymentMethods() {
           ),
         )}
       </PaymentMethodOptions>
-      {paymentMethodError && <RegularText>{paymentMethodError}</RegularText>}
+      {paymentMethodError && (
+        <RegularText
+          size="s"
+          style={{
+            color: '#db0000',
+            marginTop: '1rem',
+            fontStyle: 'italic',
+          }}
+        >
+          {paymentMethodError}
+        </RegularText>
+      )}
     </PaymentMethodsContainer>
   );
 }

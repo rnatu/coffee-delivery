@@ -38,6 +38,8 @@ export const InputStyledContainer = styled.div`
   background-color: ${({ theme }) => theme.colors['base-input']};
   border: 1px solid ${({ theme }) => theme.colors['base-button']};
 
+  border-radius: 4px;
+
   &:focus-within {
     outline: 0;
     box-shadow: 0 0 0 2px ${(props) => props.theme.colors['brand-yellow-dark']};

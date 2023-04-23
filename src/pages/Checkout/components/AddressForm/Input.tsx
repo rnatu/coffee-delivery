@@ -16,7 +16,18 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <InputStyled {...props} ref={ref} />
           {rightText && <RegularText size="s">{rightText}</RegularText>}
         </InputStyledContainer>
-        {error && <RegularText size="s">{error}</RegularText>}
+        {error && (
+          <RegularText
+            size="s"
+            style={{
+              color: '#db0000',
+              marginTop: '0.2rem',
+              fontStyle: 'italic',
+            }}
+          >
+            {error}
+          </RegularText>
+        )}
       </div>
     );
   },

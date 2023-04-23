@@ -53,4 +53,9 @@ export const PaymentInputContainer = styled.div`
       background: ${({ theme }) => theme.colors['base-hover']};
     }
   }
+
+  //Disable Text Selection
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 `;

@@ -18,7 +18,11 @@ export function CartCard() {
 
       <CartResume />
 
-      <Button text="Confirmar Pedido" type="submit" />
+      <Button
+        text="Confirmar Pedido"
+        type="submit"
+        disabled={cartState.coffees.length <= 0}
+      />
     </CartCardContainer>
   );
 }

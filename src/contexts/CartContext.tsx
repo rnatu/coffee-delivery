@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useReducer } from 'react';
+import { createContext, ReactNode, useReducer } from 'react';
 
 import {
   addOnCartAction,
@@ -59,10 +59,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     dispatch(changeCartItemQuantityAction({ coffee, changeQuantity }));
   }
 
-  useEffect(() => {
-    localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartState));
-  }, [cartState]);
-  // localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartState));
+  // useEffect(() => {
+  //   localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartState));
+  // }, [cartState]);
+  localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartState));
 
   return (
     <CartContext.Provider

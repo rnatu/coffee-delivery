@@ -60,7 +60,9 @@ export function Checkout() {
   function handleCheckout(data: checkoutFormData) {
     if (data) {
       navigate('/success', {
-        state: data,
+        state: {
+          from: 'checkout',
+        },
       });
     }
   }

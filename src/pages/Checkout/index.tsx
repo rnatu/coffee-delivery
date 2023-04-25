@@ -1,3 +1,4 @@
+//! RETIRAR
 /* eslint-disable no-unused-vars */
 import { TitleText } from '../../components/Typography';
 import { PaymentMethods } from './components/PaymentMethods';
@@ -49,6 +50,7 @@ export function Checkout() {
   const checkoutForm = useForm<checkoutFormData>({
     // resolver: zodResolver(checkoutFormValidationSchema),
     defaultValues: {
+      //! verify
       paymentMethod: undefined,
     },
   });

@@ -70,9 +70,8 @@ export function AddressForm() {
           placeholder="UF"
           maxLength={2}
           {...register('uf')}
-          pattern="[A-Za-z]+"
-          title="Exemplo: SP"
           error={errors.uf?.message}
+          title="Exemplo: SP"
         />
       </InputsContainer>
     </AddressFormContainer>

@@ -23,10 +23,9 @@ export const paymentMethodsData = {
 
 export function PaymentMethods() {
   const { colors } = useTheme();
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+
+  const { register, formState } = useFormContext();
+  const { errors } = formState;
 
   const paymentMethodError = errors?.paymentMethod?.message as string;
 

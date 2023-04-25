@@ -1,9 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { TitleText } from '../../components/Typography';
-import {
-  PaymentMethods,
-  paymentMethodsData,
-} from './components/PaymentMethods';
+import { PaymentMethods } from './components/PaymentMethods';
 import { AddressForm } from './components/AddressForm';
 import {
   SelectedCoffees,
@@ -14,10 +11,7 @@ import { CartCard } from './components/CartCard';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useNavigate } from 'react-router-dom';
-
-const cepComTraco = '12345-678';
-const cepSemTraco = '1234567';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const checkoutFormValidationSchema = zod.object({
   cep: zod
@@ -47,13 +41,13 @@ const checkoutFormValidationSchema = zod.object({
   }),
 });
 
-type checkoutFormData = zod.infer<typeof checkoutFormValidationSchema>;
+export type checkoutFormData = zod.infer<typeof checkoutFormValidationSchema>;
 
 export function Checkout() {
   const navigate = useNavigate();
 
   const checkoutForm = useForm<checkoutFormData>({
-    resolver: zodResolver(checkoutFormValidationSchema),
+    // resolver: zodResolver(checkoutFormValidationSchema),
     defaultValues: {
       paymentMethod: undefined,
     },
@@ -62,10 +56,11 @@ export function Checkout() {
   const { handleSubmit } = checkoutForm;
 
   function handleCheckout(data: checkoutFormData) {
-    console.log(data);
-    // if (data) {
-    //   navigate('/success');
-    // }
+    if (data) {
+      navigate('/success', {
+        state: data,
+      });
+    }
   }
 
   return (

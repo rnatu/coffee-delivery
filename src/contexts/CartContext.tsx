@@ -3,6 +3,7 @@ import { createContext, ReactNode, useReducer } from 'react';
 import {
   addOnCartAction,
   changeCartItemQuantityAction,
+  clearCartAction,
   removeFromCartAction,
 } from '../reducers/cart/action';
 import {
@@ -19,6 +20,7 @@ type CartContextType = {
     coffee: CoffeeCartType,
     changeQuantity: 'increase' | 'decrease',
   ) => void;
+  clearCart: () => void;
 };
 
 export const CartContext = createContext({} as CartContextType);
@@ -59,6 +61,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     dispatch(changeCartItemQuantityAction({ coffee, changeQuantity }));
   }
 
+  function clearCart() {
+    dispatch(clearCartAction());
+  }
+
   // useEffect(() => {
   //   localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartState));
   // }, [cartState]);
@@ -71,6 +77,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         addOnCart,
         removeFromCart,
         changeCartItemQuantity,
+        clearCart,
       }}
     >
       {children}

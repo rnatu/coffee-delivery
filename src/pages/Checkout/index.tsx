@@ -1,5 +1,3 @@
-//! RETIRAR
-/* eslint-disable no-unused-vars */
 import { TitleText } from '../../components/Typography';
 import { PaymentMethods } from './components/PaymentMethods';
 import { AddressForm } from './components/AddressForm';
@@ -12,7 +10,8 @@ import { CartCard } from './components/CartCard';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useCartContext } from '../../hooks/useCartContext';
 
 const checkoutFormValidationSchema = zod.object({
   cep: zod
@@ -46,13 +45,11 @@ export type checkoutFormData = zod.infer<typeof checkoutFormValidationSchema>;
 
 export function Checkout() {
   const navigate = useNavigate();
+  const { clearCart } = useCartContext();
 
   const checkoutForm = useForm<checkoutFormData>({
-    // resolver: zodResolver(checkoutFormValidationSchema),
-    defaultValues: {
-      //! verify
-      paymentMethod: undefined,
-    },
+    resolver: zodResolver(checkoutFormValidationSchema),
+    defaultValues: {},
   });
 
   const { handleSubmit } = checkoutForm;
@@ -64,6 +61,7 @@ export function Checkout() {
           from: 'checkout',
         },
       });
+      clearCart();
     }
   }
 

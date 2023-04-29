@@ -60,21 +60,22 @@ Nesta aplicação o meu principal objetivo foi criar uma ma aplicação para ge
 - Propriedades
 - Componentização
 
-
 ## 🚀 Tecnologias utilizadas
 
 - [ReactJS](https://pt-br.reactjs.org/)
-  - [SASS](https://sass-lang.com/)
-  - [Font Awesome](https://fontawesome.com/)
+  - [styled-components](https://styled-components.com/)
+  - [phosphor-icons](https://phosphoricons.com/)
+  - [immer](https://immerjs.github.io/immer/)
+  - [React Hook Form](https://react-hook-form.com/)
+  - [zod Validations](https://zod.dev/)
+  - [react-router-dom](https://reactrouter.com/en/main)
+  - [uuid](https://github.com/uuidjs/uuid)
 - [TypeScript](https://www.typescriptlang.org/)
-- [axios](https://github.com/axios/axios)
-- [localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-- API - <https://unpkg.com/pokemons@1.1.0/pokemons.json>
+- [Vite](https://vitejs.dev/)
 
 Code formatter:
 
 - [esLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
 
 ## ⚡ Como utilizar
 

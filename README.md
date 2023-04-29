@@ -1,9 +1,9 @@
 <h1 align="center">
-<img alig src="https://camo.githubusercontent.com/418d92ecbe7cd1805153001a34147ab7c965103432ff4a68eaa2fc5d4e6c1b42/68747470733a2f2f696b2e696d6167656b69742e696f2f6877796b73766a3469762f706f6b656465785f4e5f576757724a4b30732e706e67" width=500 alt="Pokédex logo">
+<img alig src="./src/assets/logo.svg" width=500 alt="Pokédex logo">
 </h1>
 
 <h3 align="center">
-  Criando uma Pokédex com ReactJS/Typescript
+  Criando uma cafeteria fictícia com ReactJS/Typescript
 </h3>
 
 <p align="center">
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-Desenvolvi uma aplicação de uma Pokédex do zero utilizando ReactJS e TypeScript como base
+Desenvolvi uma aplicação para gerenciar um carrinho de compras de uma cafeteria fictícia do zero, utilizando ReactJS e TypeScript como base.
 </p>
 
 <p align="center">
@@ -33,25 +33,33 @@ Desenvolvi uma aplicação de uma Pokédex do zero utilizando ReactJS e TypeS
 
 ## 📜 Sobre o projeto
 
-Nesta aplicação o meu principal objetivo foi criar uma Pokédex com registro de todos os pokemons fornecidos por uma API, criando a interface através de um layout previamente construído, buscando deixar o mais próximo possível.
+Nesta aplicação o meu principal objetivo foi criar uma ma aplicação para gerenciar um carrinho de compras, criando a interface através de um layout previamente construído, buscando deixar o mais próximo possível e funcional.
 
 ### Principais funcionalidades implementadas
 
-- Listar todos os pokemons
-- Buscar por nome ou registro nacional do pokemon
-- Mostrar pokemons por tipo selecionado;
-- Favoritar pokemon individualmente
-- Listar pokemons favoritados;
-- Ordenar pokemons por ordem de registro nacional crescente ou decrescente
+- Listagem de produtos (cafés) disponíveis para compra
+- Adicionar uma quantidade específicas de itens no carrinho
+- Aumentar ou remover a quantidade de itens no carrinho
+- Formulário para o usuário preencher o seu endereço
+- Exibir o total de itens no carrinho no Header
+- Exibir o valor total da soma de itens no carrinho multiplicados pelo valor
 
-### Funcionalidades Adicionais
+#### Funcionalidades Adicionais
 
-- TypeScript
-- Múltiplos filtros funcionando simultaneamente
-- Design adaptado para responsividade
-- Boas Práticas de SEO e acessibilidade.
-- Filtro para pokemons repetidos buscados na API
-- Filtro para pokemons com imagens inválidas
+- Filtro de cafés por tag
+- validação para exibição de rotas
+
+#### Conceitos
+
+- Estados
+- ContextAPI
+- Reducer
+- LocalStorage
+- Imutabilidade do estado
+- Listas e chaves no ReactJS
+- Propriedades
+- Componentização
+
 
 ## 🚀 Tecnologias utilizadas
 
@@ -74,16 +82,16 @@ Code formatter:
 
 ```bash
     # Instalar as dependências
-    $ yarn
+    $ npm i
 ```
 
 ### Iniciando aplicação
 
 ```bash
     # Iniciando aplicação
-    $ yarn start
+    $ npm run dev
 
-    # A aplicação será aberta na porta:3000 - Basta acessar: http://localhost:3000
+    # A aplicação será aberta na porta:3000 - Basta acessar: http://localhost:5173/
 ```
 
 <h4 align="center">

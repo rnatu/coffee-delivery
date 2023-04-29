@@ -33,7 +33,7 @@ Desenvolvi uma aplicação para gerenciar um carrinho de compras de uma cafet
 
 ## 📜 Sobre o projeto
 
-Nesta aplicação o meu principal objetivo foi criar uma aplicação para gerenciar um carrinho de compras, criando a interface através de um layout previamente construído, buscando deixar o mais próximo possível e funcional.
+O principal objetivo desta aplicação é gerenciar um carrinho de compras, criando a interface através de um layout previamente construído, buscando deixar o mais próximo possível e funcional.
 
 <p align="center">
   <img alig src="./public/demonstration.png" width=450 alt="Coffee Delivery Logo">
@@ -51,7 +51,7 @@ Nesta aplicação o meu principal objetivo foi criar uma aplicação para geren
 #### Funcionalidades Adicionais
 
 - Filtro de cafés por tag
-- validação para exibição de rotas
+- Validação para exibição de rotas
 
 #### Conceitos
 

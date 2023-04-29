@@ -17,7 +17,6 @@ export type ActionType = {
   payload?: ActionPayloads;
 };
 
-// com immer
 export const cartReducer = produce(
   (draft: CartState, { type, payload }: ActionType) => {
     function getCoffeeIndexOnCart() {

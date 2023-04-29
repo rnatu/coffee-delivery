@@ -1,5 +1,5 @@
 <h1 align="center">
-<img alig src="./src/assets/intro-imagem.svg" width=500 alt="Pokédex logo">
+<img alig src="./src/assets/intro-imagem.svg" width=500 alt="Coffee Delivery Logo">
 </h1>
 
 <h3 align="center">
@@ -34,6 +34,10 @@ Desenvolvi uma aplicação para gerenciar um carrinho de compras de uma cafet
 ## 📜 Sobre o projeto
 
 Nesta aplicação o meu principal objetivo foi criar uma ma aplicação para gerenciar um carrinho de compras, criando a interface através de um layout previamente construído, buscando deixar o mais próximo possível e funcional.
+
+<p align="center">
+  <img alig src="./public/demonstration.png" width=450 alt="Coffee Delivery Logo">
+</p>
 
 ### Principais funcionalidades implementadas
 

@@ -1,5 +1,5 @@
 <h1 align="center">
-<img alig src="./src/assets/logo.svg" width=500 alt="Pokédex logo">
+<img alig src="./src/assets/intro-imagem.svg" width=500 alt="Pokédex logo">
 </h1>
 
 <h3 align="center">

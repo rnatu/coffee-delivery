@@ -25,8 +25,8 @@ Desenvolvi uma aplicação para gerenciar um carrinho de compras de uma cafet
 <h3 align="center">
   Acesse a aplicação pelo link abaixo<br />
    <font size="4">
-   <a  href="https://pokedex-synvia.herokuapp.com/">
-  https://pokedex-synvia.herokuapp.com/
+   <a  href="https://exquisite-stroopwafel-262dd1.netlify.app">
+  https://exquisite-stroopwafel-262dd1.netlify.app
   </a>
   </font>
 </h3>
